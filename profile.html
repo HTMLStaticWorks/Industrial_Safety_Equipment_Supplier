@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | Industrial Safety Equipment Supplier</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="icon" type="image/png" href="assets/images/logo.svg">
+</head>
+<body class="bg-light">
+    <!-- Main Navigation -->
+    <nav class="navbar navbar-expand-xl fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/logo.svg" alt="Industrial Safety Logo" width="45" height="45" class="me-2">
+                <strong style="color: var(--primary-color); font-size: 24px; letter-spacing: -1px;">INDUSTRIAL<span style="color: var(--accent-color);">SAFETY</span></strong>
+            </a>
+            
+            <div class="d-flex align-items-center order-xl-last gap-3">
+                <!-- Theme Toggles -->
+                <button class="btn btn-sm btn-outline-primary d-none d-xl-inline-block" id="theme-toggle" title="Toggle Dark Mode">🌓</button>
+                <a href="dashboard.html" class="btn btn-sm btn-outline-primary d-none d-xl-inline-block">Dashboard</a>
+                
+                <a href="cart.html" class="position-relative text-dark">
+                    🛒 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 10px;">3</span>
+                </a>
+                
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <a href="login.html" class="btn btn-primary d-none d-xl-inline-block">Client Login</a>
+            </div>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header border-bottom">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 gap-2">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item d-xl-none"><a class="nav-link fw-bold text-primary" href="login.html">Client Login</a></li>
+                    </ul>
+                    <div class="d-xl-none mt-4 d-flex gap-2">
+                         <button class="btn btn-outline-primary w-50" onclick="document.body.classList.toggle('dark-mode')">Dark Mode</button>
+                         <a href="dashboard.html" class="btn btn-outline-primary w-50">Dashboard</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="row g-5">
+            <!-- Profile Sidebar -->
+            <div class="col-lg-3">
+                <div class="card p-4 border-0 shadow-sm bg-white text-center">
+                    <img src="https://placehold.co/150x150/f8f9fa/333333?text=AV" class="rounded-circle mx-auto mb-4 border p-2">
+                    <h5 class="mb-1">Alex Volkov</h5>
+                    <p class="small text-muted mb-4 text-uppercase fw-bold">Site Safety Manager</p>
+                    <hr>
+                    <nav class="nav flex-column gap-2 text-start mt-4">
+                        <a href="#" class="nav-link text-primary fw-bold">👤 Account Settings</a>
+                        <a href="#" class="nav-link text-muted">🔖 Saved Items</a>
+                        <a href="#" class="nav-link text-muted">⚙️ Security</a>
+                        <a href="#" class="nav-link text-muted">💳 Payment Info</a>
+                        <a href="login.html" class="nav-link text-danger">🛑 Sign Out</a>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Profile Main Content -->
+            <div class="col-lg-9">
+                <div class="card p-5 border-0 shadow-sm bg-white mb-5 animate-me">
+                    <h3 class="mb-5">Profile Information</h3>
+                    <form class="row g-4 needs-validation" novalidate>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-bold small text-uppercase">Full Name</label>
+                            <input type="text" class="form-control" value="Alex Volkov" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-bold small text-uppercase">Email Address</label>
+                            <input type="email" class="form-control" value="alex.v@bluewave.com" readonly>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-bold small text-uppercase">Company</label>
+                            <input type="text" class="form-control" value="BlueWave Energy" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-bold small text-uppercase">Phone</label>
+                            <input type="tel" class="form-control" value="+1 (555) 0199-012" required>
+                        </div>
+                        <div class="col-12 mt-4 pt-4 border-top">
+                            <button type="submit" class="btn btn-primary px-5 py-2">Update Information</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="card p-5 border-0 shadow-sm bg-white animate-me">
+                    <h5 class="mb-4">Change Password</h5>
+                    <form class="row g-4 overflow-hidden">
+                        <div class="col-md-4">
+                            <label class="form-label fw-bold small text-uppercase">Current Password</label>
+                            <input type="password" class="form-control" placeholder="••••••••">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label fw-bold small text-uppercase">New Password</label>
+                            <input type="password" class="form-control" placeholder="••••••••">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label fw-bold small text-uppercase">Confirm New Password</label>
+                            <input type="password" class="form-control" placeholder="••••••••">
+                        </div>
+                        <div class="col-12 text-end">
+                            <button type="submit" class="btn btn-secondary px-5 py-2 mt-3">Reset Password</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4">
+                    <a href="index.html" class="d-flex align-items-center mb-4 text-decoration-none">
+                        <img src="assets/images/logo.svg" alt="Logo" width="50" height="50" class="me-3">
+                        <strong style="color: var(--primary-color); font-size: 24px; letter-spacing: -1px;">INDUSTRIAL<span style="color: var(--accent-color);">SAFETY</span></strong>
+                    </a>
+                    <p>Leading supplier of B2B industrial safety equipment. We specialize in providing certified PPE for high-risk environments.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" title="X (Twitter)"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="shop.html">Shop All</a></li>
+                        <li><a href="blog.html">Safety Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="shop.html">Bulk Orders</a></li>
+                        <li><a href="dashboard.html">SDS Downloads</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li>📍 123 Industrial Way, Houston, TX</li>
+                        <li>📞 +1 (800) 555-0199</li>
+                        <li>✉️ sales@industrialsafety.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-top border-secondary py-4 text-center">
+                <p class="mb-0">&copy; 2026 Industrial Safety Equipment Supplier. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" id="back-to-top" class="btn btn-accent rounded-circle position-fixed bottom-0 end-0 m-4 shadow" style="width: 50px; height: 50px; z-index: 1000; display: none; align-items: center; justify-content: center;">
+        ↑
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

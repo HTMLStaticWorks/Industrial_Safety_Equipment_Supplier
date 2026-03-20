@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Industrial Safety Equipment Supplier</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="icon" type="image/png" href="assets/images/logo.svg">
+</head>
+<body class="bg-light shop-page">
+    <!-- Main Navigation -->
+    <nav class="navbar navbar-expand-xl fixed-top">
+        <div class="container">
+            <a class="navbar-brand brand-identity" href="index.html">
+                <img src="assets/images/logo.svg" alt="Industrial Safety Logo" class="brand-icon">
+                <strong class="brand-text">INDUSTRIAL<span class="brand-text-accent">SAFETY</span></strong>
+            </a>
+            
+            <div class="d-flex align-items-center order-xl-last gap-3">
+                <!-- Theme Toggles -->
+                <button class="btn btn-sm btn-outline-primary d-none d-xl-inline-block" id="theme-toggle" title="Toggle Dark Mode">🌓</button>
+                <a href="dashboard.html" class="btn btn-sm btn-outline-primary d-none d-xl-inline-block">Dashboard</a>
+                
+                <a href="cart.html" class="position-relative text-dark">
+                    🛒 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 10px;">3</span>
+                </a>
+                
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <a href="login.html" class="btn btn-primary d-none d-xl-inline-block">Client Login</a>
+            </div>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header border-bottom">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 gap-2">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="shop.html">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item d-xl-none"><a class="nav-link fw-bold text-primary" href="login.html">Client Login</a></li>
+                    </ul>
+                    <div class="d-xl-none mt-4 d-flex gap-2">
+                         <button class="btn btn-outline-primary w-50" onclick="document.body.classList.toggle('dark-mode')">Dark Mode</button>
+                         <a href="dashboard.html" class="btn btn-outline-primary w-50">Dashboard</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header (Replacing original simple h2) -->
+    <div class="py-5 text-white position-relative overflow-hidden shop-header" style="background-color: var(--primary-color) !important;">
+        <div class="bg-cert-text" style="top: 50%; opacity: 0.05;">PRODUCTS</div>
+        <div class="container position-relative z-1 text-center">
+            <h1 class="display-4 fw-bold mb-2">Shop All Equipment</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center text-uppercase small fw-bold">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-white-50">Home</a></li>
+                    <li class="breadcrumb-item active text-accent" aria-current="page">Shop</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container-fluid py-4 px-lg-5 shop-app-container">
+        <div class="row g-4 h-100">
+            <!-- Sidebar Filters -->
+            <aside class="col-lg-3 shop-sidebar">
+                <div class="card p-4 border-0 shadow-sm rounded-4">
+                    <div class="d-flex align-items-center mb-4">
+                        <span class="h5 mb-0">Filters</span>
+                        <button class="btn btn-sm btn-link ms-auto text-decoration-none p-0">Clear All</button>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="form-label fw-bold small text-uppercase">Categories</label>
+                        <div class="filter-options">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="cat-1" checked>
+                                <label class="form-check-label" for="cat-1">Head Protection</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="cat-2">
+                                <label class="form-check-label" for="cat-2">Face & Eye Protection</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="cat-3">
+                                <label class="form-check-label" for="cat-3">Respiratory</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="cat-4">
+                                <label class="form-check-label" for="cat-4">High-Vis Clothing</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold small text-uppercase">Price Range</label>
+                        <input type="range" class="form-range custom-range" min="0" max="1000" id="priceRange">
+                        <div class="d-flex justify-content-between mt-1">
+                            <span class="small fw-bold text-primary">$0</span>
+                            <span class="small fw-bold text-primary">$1,000+</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-0">
+                        <label class="form-label fw-bold small text-uppercase">Certifications</label>
+                        <div class="filter-options">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="cert-1">
+                                <label class="form-check-label" for="cert-1">ANSI Compliant</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="cert-2">
+                                <label class="form-check-label" for="cert-2">OSHA Approved</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="cert-3">
+                                <label class="form-check-label" for="cert-3">CE Certified</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="cert-4">
+                                <label class="form-check-label" for="cert-4">NFPA Compliant</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="col-lg-9 shop-products-area">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3 bg-white p-3 rounded-4 shadow-sm animate-me">
+                    <p class="mb-0 text-muted">Showing all <strong>15</strong> premium products</p>
+                    <div class="d-flex align-items-center gap-3">
+                        <span class="small text-muted text-nowrap">Sort by:</span>
+                        <select class="form-select form-select-sm border-0 bg-light w-auto">
+                            <option>Popularity</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <!-- 1: Hard Hat -->
+                    <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.1s;">
+                        <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="card-img-wrapper bg-light p-4 text-center">
+                                <img src="assets/images/products/hard_hat_apex.png" class="img-fluid product-img-main" alt="Hard Hat" style="max-height: 180px;">
+                            </div>
+                            <div class="card-body p-4 flex-direction-column">
+                                <div class="mt-auto">
+                                    <span class="text-uppercase small fw-bold text-accent">Head Protection</span>
+                                    <h5 class="card-title my-2">Apex Vented Series Hard Hat</h5>
+                                    <p class="price-tag h5 fw-bold text-primary mb-3">$32.00</p>
+                                    <div class="product-actions grid-template-columns-2">
+                                        <a href="#" class="btn btn-outline-primary btn-sm rounded-3 py-2">View</a>
+                                        <button class="btn btn-primary btn-sm rounded-3 py-2">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2: Gloves -->
+                    <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.2s;">
+                        <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="card-img-wrapper bg-light p-4 text-center">
+                                <img src="assets/images/products/kevlar_gloves.png" class="img-fluid product-img-main" alt="Gloves" style="max-height: 180px;">
+                            </div>
+                            <div class="card-body p-4 flex-direction-column">
+                                <div class="mt-auto">
+                                    <span class="text-uppercase small fw-bold text-accent">Hand Protection</span>
+                                    <h5 class="card-title my-2">Kevlar Impact Protection Gloves</h5>
+                                    <p class="price-tag h5 fw-bold text-primary mb-3">$25.99</p>
+                                    <div class="product-actions grid-template-columns-2">
+                                        <a href="#" class="btn btn-outline-primary btn-sm rounded-3 py-2">View</a>
+                                        <button class="btn btn-primary btn-sm rounded-3 py-2">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3: Harness -->
+                    <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.3s;">
+                        <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="card-img-wrapper bg-light p-4 text-center">
+                                <img src="assets/images/products/fall_arrest_harness.png" class="img-fluid product-img-main" alt="Harness" style="max-height: 180px;">
+                            </div>
+                            <div class="card-body p-4 flex-direction-column">
+                                <div class="mt-auto">
+                                    <span class="text-uppercase small fw-bold text-accent">Fall Protection</span>
+                                    <h5 class="card-title my-2">Titan Fall Arrest Harness</h5>
+                                    <p class="price-tag h5 fw-bold text-primary mb-3">$145.00</p>
+                                    <div class="product-actions grid-template-columns-2">
+                                        <a href="#" class="btn btn-outline-primary btn-sm rounded-3 py-2">View</a>
+                                        <button class="btn btn-primary btn-sm rounded-3 py-2">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4: Safety Vest -->
+                    <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.1s;">
+                        <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="card-img-wrapper bg-light p-4 text-center">
+                                <img src="assets/images/products/reflective_vest_c3.png" class="img-fluid product-img-main" alt="Vest" style="max-height: 180px;">
+                            </div>
+                            <div class="card-body p-4 flex-direction-column">
+                                <div class="mt-auto">
+                                    <span class="text-uppercase small fw-bold text-accent">High-Vis</span>
+                                    <h5 class="card-title my-2">ANSI Class 3 Reflective Vest</h5>
+                                    <p class="price-tag h5 fw-bold text-primary mb-3">$18.99</p>
+                                    <div class="product-actions grid-template-columns-2">
+                                        <a href="#" class="btn btn-outline-primary btn-sm rounded-3 py-2">View</a>
+                                        <button class="btn btn-primary btn-sm rounded-3 py-2">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5: Smart Helmet -->
+                    <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.2s;">
+                        <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="badge bg-primary position-absolute top-0 end-0 m-3">New Tech</div>
+                            <div class="card-img-wrapper bg-light p-4 text-center">
+                                <img src="assets/images/products/hud_smart_helmet.png" class="img-fluid product-img-main" alt="Smart Helmet" style="max-height: 180px;">
+                            </div>
+                            <div class="card-body p-4 flex-direction-column">
+                                <div class="mt-auto">
+                                    <span class="text-uppercase small fw-bold text-accent">Digital Safety</span>
+                                    <h5 class="card-title my-2">HUD Smart Helmet System v2.0</h5>
+                                    <p class="price-tag h5 fw-bold text-primary mb-3">$850.00</p>
+                                    <div class="product-actions grid-template-columns-2">
+                                        <a href="#" class="btn btn-outline-primary btn-sm rounded-3 py-2">View</a>
+                                        <button class="btn btn-primary btn-sm rounded-3 py-2">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6: VR Training -->
+                    <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.3s;">
+                        <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="card-img-wrapper bg-light p-4 text-center">
+                                <img src="assets/images/products/vr_training_set.png" class="img-fluid product-img-main" alt="VR Safety" style="max-height: 180px;">
+                            </div>
+                            <div class="card-body p-4 flex-direction-column">
+                                <div class="mt-auto">
+                                    <span class="text-uppercase small fw-bold text-accent">Training Kits</span>
+                                    <h5 class="card-title my-2">Industrial VR Safety Training Set</h5>
+                                    <p class="price-tag h5 fw-bold text-primary mb-3">$2,499.00</p>
+                                    <div class="product-actions grid-template-columns-2">
+                                        <a href="#" class="btn btn-outline-primary btn-sm rounded-3 py-2">View</a>
+                                        <button class="btn btn-primary btn-sm rounded-3 py-2">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7: Sustainable Gloves -->
+                    <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.1s;">
+                        <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="badge bg-success position-absolute top-0 start-0 m-3 z-1">Eco-Friendly</div>
+                            <div class="card-img-wrapper bg-light p-4 text-center">
+                                <img src="assets/images/products/eco_nitrile_gloves.png" class="img-fluid product-img-main" alt="Eco Gear" style="max-height: 180px;">
+                            </div>
+                            <div class="card-body p-4 flex-direction-column">
+                                <div class="mt-auto">
+                                    <span class="text-uppercase small fw-bold text-accent">Sustainable PPE</span>
+                                    <h5 class="card-title my-2">Biodegradable Nitrile Gloves</h5>
+                                    <p class="price-tag h5 fw-bold text-primary mb-3">$15.00</p>
+                                    <div class="product-actions grid-template-columns-2">
+                                        <a href="#" class="btn btn-outline-primary btn-sm rounded-3 py-2">View</a>
+                                        <button class="btn btn-primary btn-sm rounded-3 py-2">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8: Protective Material Sleeves -->
+                    <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.2s;">
+                        <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="card-img-wrapper bg-light p-4 text-center">
+                                <img src="assets/images/products/aramid_sleeves.png" class="img-fluid product-img-main" alt="Sleeves" style="max-height: 180px;">
+                            </div>
+                            <div class="card-body p-4 flex-direction-column">
+                                <div class="mt-auto">
+                                    <span class="text-uppercase small fw-bold text-accent">Arm Protection</span>
+                                    <h5 class="card-title my-2">Cut-Resistant Aramid Sleeves</h5>
+                                    <p class="price-tag h5 fw-bold text-primary mb-3">$22.00</p>
+                                    <div class="product-actions grid-template-columns-2">
+                                        <a href="#" class="btn btn-outline-primary btn-sm rounded-3 py-2">View</a>
+                                        <button class="btn btn-primary btn-sm rounded-3 py-2">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 9: Goggles -->
+                    <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.3s;">
+                        <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="card-img-wrapper bg-light p-4 text-center">
+                                <img src="assets/images/products/panoramic_goggles.png" class="img-fluid product-img-main" alt="Goggles" style="max-height: 180px;">
+                            </div>
+                            <div class="card-body p-4 flex-direction-column">
+                                <div class="mt-auto">
+                                    <span class="text-uppercase small fw-bold text-accent">Eye Protection</span>
+                                    <h5 class="card-title my-2">Panoramic Anti-Fog Goggles</h5>
+                                    <p class="price-tag h5 fw-bold text-primary mb-3">$12.50</p>
+                                    <div class="product-actions grid-template-columns-2">
+                                        <a href="#" class="btn btn-outline-primary btn-sm rounded-3 py-2">View</a>
+                                        <button class="btn btn-primary btn-sm rounded-3 py-2">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 10: Signage Pack -->
+                    <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.1s;">
+                        <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="card-img-wrapper bg-light p-4 text-center">
+                                <img src="assets/images/products/safety_signage.png" alt="Signage" class="img-fluid product-img-main" style="max-height: 180px;">
+                            </div>
+                            <div class="card-body p-4 flex-direction-column">
+                                <div class="mt-auto">
+                                    <span class="text-uppercase small fw-bold text-accent">Site Access</span>
+                                    <h5 class="card-title my-2">Premium Site Safety Signage Pack</h5>
+                                    <p class="price-tag h5 fw-bold text-primary mb-3">$45.00</p>
+                                    <div class="product-actions grid-template-columns-2">
+                                        <a href="#" class="btn btn-outline-primary btn-sm rounded-3 py-2">View</a>
+                                        <button class="btn btn-primary btn-sm rounded-3 py-2">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 11: Bulk Nitrile Gloves -->
+                    <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.2s;">
+                        <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="badge bg-info position-absolute top-0 start-0 m-3 z-1">Bulk Buy</div>
+                            <div class="card-img-wrapper bg-light p-4 text-center">
+                                <img src="assets/images/products/nitrile_gloves_bulk.png" alt="Gloves Bulk" class="img-fluid product-img-main" style="max-height: 180px;">
+                            </div>
+                            <div class="card-body p-4 flex-direction-column">
+                                <div class="mt-auto">
+                                    <span class="text-uppercase small fw-bold text-accent">Hand Protection</span>
+                                    <h5 class="card-title my-2">Heavy Duty Nitrile (Box of 100)</h5>
+                                    <p class="price-tag h5 fw-bold text-primary mb-3">$18.00</p>
+                                    <div class="product-actions grid-template-columns-2">
+                                        <a href="#" class="btn btn-outline-primary btn-sm rounded-3 py-2">View</a>
+                                        <button class="btn btn-primary btn-sm rounded-3 py-2">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 12: High-Viz Mesh Vest -->
+                    <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.3s;">
+                        <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="card-img-wrapper bg-light p-4 text-center">
+                                <img src="assets/images/products/mesh_vest.png" alt="Mesh Vest" class="img-fluid product-img-main" style="max-height: 180px;">
+                            </div>
+                            <div class="card-body p-4 flex-direction-column">
+                                <div class="mt-auto">
+                                    <span class="text-uppercase small fw-bold text-accent">High-Vis</span>
+                                    <h5 class="card-title my-2">Vented Breathable Mesh Vest</h5>
+                                    <p class="price-tag h5 fw-bold text-primary mb-3">$14.50</p>
+                                    <div class="product-actions grid-template-columns-2">
+                                        <a href="#" class="btn btn-outline-primary btn-sm rounded-3 py-2">View</a>
+                                        <button class="btn btn-primary btn-sm rounded-3 py-2">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 13: Full Body Climbing Harness -->
+                    <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.1s;">
+                        <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="badge bg-danger position-absolute top-0 start-0 m-3 z-1">Save 15%</div>
+                            <div class="card-img-wrapper bg-light p-4 text-center">
+                                <img src="assets/images/products/pro_harness.png" alt="Pro Harness" class="img-fluid product-img-main" style="max-height: 180px;">
+                            </div>
+                            <div class="card-body p-4 flex-direction-column">
+                                <div class="mt-auto">
+                                    <span class="text-uppercase small fw-bold text-accent">Fall Protection</span>
+                                    <h5 class="card-title my-2">Pro-Series Climbing Harness</h5>
+                                    <p class="price-tag h5 fw-bold text-primary mb-3">$185.00</p>
+                                    <div class="product-actions grid-template-columns-2">
+                                        <a href="#" class="btn btn-outline-primary btn-sm rounded-3 py-2">View</a>
+                                        <button class="btn btn-primary btn-sm rounded-3 py-2">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 14: Safety Boot Steel Toe -->
+                    <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.2s;">
+                        <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="card-img-wrapper bg-light p-4 text-center">
+                                <img src="assets/images/products/safety_starter_kit.png" alt="Safety Kit" class="img-fluid product-img-main" style="max-height: 180px;">
+                            </div>
+                            <div class="card-body p-4 flex-direction-column">
+                                <div class="mt-auto">
+                                    <span class="text-uppercase small fw-bold text-accent">Safety Kits</span>
+                                    <h5 class="card-title my-2">Enterprise Site Safety Starter Kit</h5>
+                                    <p class="price-tag h5 fw-bold text-primary mb-3">$120.00</p>
+                                    <div class="product-actions grid-template-columns-2">
+                                        <a href="#" class="btn btn-outline-primary btn-sm rounded-3 py-2">View</a>
+                                        <button class="btn btn-primary btn-sm rounded-3 py-2">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 15: Face Shield -->
+                    <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.3s;">
+                        <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="card-img-wrapper bg-light p-4 text-center">
+                                <img src="assets/images/products/face_shield.png" alt="Face Shield" class="img-fluid product-img-main" style="max-height: 180px;">
+                            </div>
+                            <div class="card-body p-4 flex-direction-column">
+                                <div class="mt-auto">
+                                    <span class="text-uppercase small fw-bold text-accent">Face Protection</span>
+                                    <h5 class="card-title my-2">Heavy Duty 180° Face Shield</h5>
+                                    <p class="price-tag h5 fw-bold text-primary mb-3">$28.99</p>
+                                    <div class="product-actions grid-template-columns-2">
+                                        <a href="#" class="btn btn-outline-primary btn-sm rounded-3 py-2">View</a>
+                                        <button class="btn btn-primary btn-sm rounded-3 py-2">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination (Improved Styling) -->
+                <nav class="mt-5 pt-4 border-top">
+                    <ul class="pagination justify-content-center gap-2">
+                        <li class="page-item"><a class="page-link rounded-circle border-0 bg-white shadow-sm" href="#">«</a></li>
+                        <li class="page-item active"><a class="page-link rounded-circle border-0 shadow-sm" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link rounded-circle border-0 bg-white shadow-sm" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link rounded-circle border-0 bg-white shadow-sm" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link rounded-circle border-0 bg-white shadow-sm" href="#">»</a></li>
+                    </ul>
+                </nav>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer (Restored to total page bottom) -->
+    <footer class="footer mt-5 pt-5">
+        <div class="container">
+            <div class="row g-4 mb-5 text-start">
+                <div class="col-lg-4">
+                    <a href="index.html" class="brand-identity mb-4">
+                        <img src="assets/images/logo.svg" alt="Logo" class="brand-icon">
+                        <strong class="brand-text">INDUSTRIAL<span class="brand-text-accent">SAFETY</span></strong>
+                    </a>
+                    <p>Leading supplier of B2B industrial safety equipment. We specialize in providing certified PPE for high-risk environments.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" title="X (Twitter)"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="shop.html">Shop All</a></li>
+                        <li><a href="blog.html">Safety Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="shop.html">Bulk Orders</a></li>
+                        <li><a href="dashboard.html">SDS Downloads</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li>📍 123 Industrial Way, Houston, TX</li>
+                        <li>📞 +1 (800) 555-0199</li>
+                        <li>✉️ sales@industrialsafety.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-top border-secondary py-4 text-center">
+                <p class="mb-0">&copy; 2026 Industrial Safety Equipment Supplier. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" id="back-to-top" class="btn btn-accent rounded-circle position-fixed bottom-0 end-0 m-4 shadow" style="width: 50px; height: 50px; z-index: 1000; display: none; align-items: center; justify-content: center;">
+        ↑
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

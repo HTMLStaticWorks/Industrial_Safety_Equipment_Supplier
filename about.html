@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Industrial Safety Equipment Supplier</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="icon" type="image/png" href="assets/images/logo.svg">
+</head>
+<body>
+    <!-- Main Navigation -->
+    <nav class="navbar navbar-expand-xl fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/logo.svg" alt="Industrial Safety Logo" width="45" height="45" class="me-2">
+                <strong style="color: var(--primary-color); font-size: 24px; letter-spacing: -1px;">INDUSTRIAL<span style="color: var(--accent-color);">SAFETY</span></strong>
+            </a>
+            
+            <div class="d-flex align-items-center order-xl-last gap-3">
+                <!-- Theme Toggles -->
+                <button class="btn btn-sm btn-outline-primary d-none d-xl-inline-block" id="theme-toggle" title="Toggle Dark Mode">🌓</button>
+                <a href="dashboard.html" class="btn btn-sm btn-outline-primary d-none d-xl-inline-block">Dashboard</a>
+                
+                <a href="cart.html" class="position-relative text-dark">
+                    🛒 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 10px;">3</span>
+                </a>
+                
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <a href="login.html" class="btn btn-primary d-none d-xl-inline-block">Client Login</a>
+            </div>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header border-bottom">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 gap-2">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item d-xl-none"><a class="nav-link fw-bold text-primary" href="login.html">Client Login</a></li>
+                    </ul>
+                    <div class="d-xl-none mt-4 d-flex gap-2">
+                         <button class="btn btn-outline-primary w-50" onclick="document.body.classList.toggle('dark-mode')">Dark Mode</button>
+                         <a href="dashboard.html" class="btn btn-outline-primary w-50">Dashboard</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="py-64 mb-64" style="background: var(--primary-color); position: relative; overflow: hidden;">
+        <!-- Subtle decorative background text -->
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 12vw; font-weight: 900; color: rgba(255,255,255,0.03); white-space: nowrap; pointer-events: none; text-transform: uppercase;">About Industrial</div>
+        
+        <div class="container text-center position-relative z-1">
+            <h1 class="display-3 fw-bold mb-3 text-white">Our Core Safety Values</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center text-uppercase h6 fw-bold">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-white-50">Home</a></li>
+                    <li class="breadcrumb-item active text-accent" aria-current="page">About Us</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Company Mission Section -->
+    <section class="container mb-64 animate-me">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6 reveal-image">
+                <img src="assets/images/smart_safety_worker.png" alt="Safeguarding Our Workers" class="img-fluid rounded-4 shadow-lg">
+            </div>
+            <div class="col-lg-6">
+                <h2 class="section-title">Safeguarding Every Site Since 1995</h2>
+                <p class="lead text-primary fw-bold">From construction yards to offshore oil rigs, we've provided top-tier protection for millions of workers worldwide.</p>
+                <p>Our company started with one simple goal: to ensure that every worker returns home safely. Over three decades, we've grown into a global leader in industrial safety equipment (PPE), recognized for our durability and adherence to the strictest safety standards.</p>
+                <div class="row g-4 mt-3">
+                    <div class="col-md-6 d-flex align-items-start gap-2">
+                        <div class="bg-primary text-white p-2 rounded">✓</div>
+                        <div>
+                            <h6 class="mb-1">Certified Quality</h6>
+                            <p class="small text-muted">All products meet ANSI, OSHA, and ISO standards.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex align-items-start gap-2">
+                        <div class="bg-primary text-white p-2 rounded">✓</div>
+                        <div>
+                            <h6 class="mb-1">Global Logistics</h6>
+                            <p class="small text-muted">Reliable shipping to over 25 countries.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Innovation Lab Section -->
+    <section class="py-100 overflow-hidden position-relative lab-gradient-bg">
+        <!-- Decorative Background Elements -->
+        <div class="lab-pattern"></div>
+        <div class="lab-orb-1"></div>
+        <div class="lab-orb-2"></div>
+
+        <div class="container position-relative z-1">
+            <div class="row align-items-stretch g-5">
+                <div class="col-lg-6 reveal-text">
+                    <span class="badge bg-primary mb-3 p-2 px-3 text-uppercase">Precision Testing</span>
+                    <h2 class="section-title mb-4 display-5 fw-bold">The Lab: Testing for Perfection</h2>
+                    <p class="lead mb-4 text-secondary">Where cutting-edge science meets absolute worker safety. Our state-of-the-art facility is the heartbeat of our quality assurance process.</p>
+                    
+                    <!-- New Interactive Feature Cards -->
+                    <div class="row g-3 mt-4">
+                        <div class="col-sm-6">
+                            <div class="lab-feature-card p-4 rounded-4 shadow-sm h-100">
+                                <div class="lab-icon-box mb-3">🔬</div>
+                                <h6>Impact Simulation</h6>
+                                <p class="small text-muted mb-0">High-G impact testing for head protection and composite materials.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="lab-feature-card p-4 rounded-4 shadow-sm h-100">
+                                <div class="lab-icon-box mb-3">🛡️</div>
+                                <h6>Chemical Integrity</h6>
+                                <p class="small text-muted mb-0">Simulating extreme environments with over 200 hazardous materials.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="lab-feature-card p-4 rounded-4 shadow-sm h-100">
+                                <div class="lab-icon-box mb-3">🤖</div>
+                                <h6>Ergo-Scanning</h6>
+                                <p class="small text-muted mb-0">3D body mapping for ultimate comfort during long-shift wear.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="lab-feature-card p-4 rounded-4 shadow-sm h-100">
+                                <div class="lab-icon-box mb-3">⚡</div>
+                                <h6>Arc-Flash Test</h6>
+                                <p class="small text-muted mb-0">Testing electrical insulation under high-voltage surges.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 reveal-right">
+                    <div class="position-relative lab-img-container h-100">
+                        <div class="innovation-blob"></div>
+                        <div class="lab-scanner-bar"></div>
+                        <img src="assets/images/safety-lab.png" alt="Safety Testing Lab" class="img-fluid rounded-5 shadow-2fb float-img lab-main-img h-100" style="object-fit: cover; min-height: 500px;">
+                        
+                        <!-- Floating Data Points -->
+                        <div class="lab-indicator labs-p1" data-label="Impact Resistance"></div>
+                        <div class="lab-indicator labs-p2" data-label="Thermal Shield"></div>
+                        <div class="lab-indicator labs-p3" data-label="Stress Point"></div>
+
+                        <div class="position-absolute bottom-0 start-0 p-4 m-3 glass-card rounded-4 border border-white-50 shadow-lg">
+                            <h4 class="mb-0 text-primary fw-bold">ISO/IEC 17025</h4>
+                            <p class="small mb-0 opacity-75">Certified Testing Facility</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainability Section -->
+    <section class="py-64 bg-alt overflow-hidden">
+        <div class="container text-center mb-5">
+            <h2 class="section-title mx-auto text-center" style="display: table;">Our Green Commitment</h2>
+            <p class="lead max-width-700 mx-auto mt-3">We believe that protecting people shouldn't come at the cost of the planet. We're leading the industry in sustainable PPE.</p>
+        </div>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4 animate-me">
+                    <div class="card h-100 border-0 shadow-sm p-4 text-center sustainability-card">
+                        <div class="display-5 mb-3 text-success">♻️</div>
+                        <h4>Recycled Materials</h4>
+                        <p>Our 2026 collection uses 45% post-consumer recycled plastics, reducing ocean waste while maintaining top safety ratings.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-me" style="transition-delay: 0.2s;">
+                    <div class="card h-100 border-0 shadow-sm p-4 text-center sustainability-card">
+                        <div class="display-5 mb-3 text-success">📦</div>
+                        <h4>Zero-Waste Packaging</h4>
+                        <p>Eliminating single-use plastics from our shipping process. All our boxes are 100% biodegradable and FSC certified.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-me" style="transition-delay: 0.4s;">
+                    <div class="card h-100 border-0 shadow-sm p-4 text-center sustainability-card">
+                        <div class="display-5 mb-3 text-success">⚡</div>
+                        <h4>Solar-Powered Supply</h4>
+                        <p>Our main distribution centers are 80% powered by renewable energy, aiming for net-zero by 2030.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Training Hub Section -->
+    <section class="training-section-new">
+        <!-- Background Zoom Wrapper -->
+        <div class="training-bg-wrapper">
+            <img src="assets/images/training-hub.png" alt="Safety Training" class="training-bg-img">
+            <div class="training-overlay-gradient"></div>
+        </div>
+
+        <div class="container py-5 position-relative z-1">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center reveal-text">
+                    <div class="glass-container p-5 rounded-5 border border-white-50 shadow-lg" style="backdrop-filter: blur(15px); background: rgba(255,255,255,0.05);">
+                        <span class="badge bg-accent mb-3 p-2 px-3 text-uppercase">Exclusive for Clients</span>
+                        <h2 class="display-5 text-white fw-bold mb-4">Knowledge is the Ultimate PPE</h2>
+                        <p class="lead text-white-50 mb-4">We don't just supply gear; we build safer workplaces. Our Training Hub offers immersive simulators and certified workshops to keep your team sharp.</p>
+                        <div class="row g-4 mt-2">
+                            <div class="col-md-4">
+                                <div class="p-3 bg-white bg-opacity-10 rounded-3 border border-white-05">
+                                    <h3 class="h2 text-accent mb-1">500+</h3>
+                                    <p class="small text-white mb-0">Monthly Trainees</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 bg-white bg-opacity-10 rounded-3 border border-white-05">
+                                    <h3 class="h2 text-accent mb-1">100%</h3>
+                                    <p class="small text-white mb-0">OSHA Compliance</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 bg-white bg-opacity-10 rounded-3 border border-white-05">
+                                    <h3 class="h2 text-accent mb-1">VR</h3>
+                                    <p class="small text-white mb-0">Safety Simulators</p>
+                                </div>
+                        </div>
+                        <a href="contact.html" class="btn btn-accent mt-5">Request a Training Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pulse of Protection (Unique Section) -->
+    <section class="py-120 overflow-hidden pulse-section position-relative">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 reveal-text">
+                    <span class="feature-tag">2026 SAFETY STANDARD</span>
+                    <h2 class="display-5 fw-bold mb-4">The Pulse of Protection</h2>
+                    <p class="lead text-muted mb-5">Beyond the gear, we protect the livelihoods and futures of those who build our world. Our commitment to safety is a living, breathing promise that evolves with every site visit and every shipment.</p>
+                    
+                    <div class="row g-4 mb-5">
+                        <div class="col-6">
+                            <h3 class="fw-bold mb-0" style="color: var(--primary-color);">2.5M+</h3>
+                            <p class="small text-muted text-uppercase mb-0">Workers Protected</p>
+                        </div>
+                        <div class="col-6">
+                            <h3 class="fw-bold mb-0" style="color: var(--accent-color);">100%</h3>
+                            <p class="small text-muted text-uppercase mb-0">Certified Shielding</p>
+                        </div>
+                    </div>
+                    <a href="shop.html" class="btn btn-primary btn-lg rounded-pill px-5 shadow-lg">Explore Our Lineup</a>
+                </div>
+                <div class="col-lg-6 reveal-right">
+                    <div class="pulse-img-wrapper">
+                        <div class="pulse-outline"></div>
+                        <img src="assets/images/worker-portrait.png" alt="Safety Professional" class="img-fluid rounded-5 shadow-2fb float-img-slow position-relative z-1" style="border: 1px solid rgba(0, 74, 153, 0.1);">
+                        
+                        <!-- Mini Overlay Card -->
+                        <div class="position-absolute bottom-0 end-0 bg-white p-4 rounded-4 shadow-lg m-4 d-none d-md-block reveal-text" style="animation-delay: 0.8s; z-index: 2;">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-shield-alt text-accent fs-3 me-3"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-0">Zero Harm Policy</h6>
+                                    <p class="x-small text-muted mb-0">Continuous monitoring protocols.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4">
+                    <a href="index.html" class="brand-identity mb-4">
+                        <img src="assets/images/logo.svg" alt="Logo" class="brand-icon">
+                        <strong class="brand-text">INDUSTRIAL<span class="brand-text-accent">SAFETY</span></strong>
+                    </a>
+                    <p>Leading supplier of B2B industrial safety equipment. We specialize in providing certified PPE for high-risk environments.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" title="X (Twitter)"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="shop.html">Shop All</a></li>
+                        <li><a href="blog.html">Safety Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="shop.html">Bulk Orders</a></li>
+                        <li><a href="dashboard.html">SDS Downloads</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li>📍 123 Industrial Way, Houston, TX</li>
+                        <li>📞 +1 (800) 555-0199</li>
+                        <li>✉️ sales@industrialsafety.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-top border-secondary py-4 text-center">
+                <p class="mb-0">&copy; 2026 Industrial Safety Equipment Supplier. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" id="back-to-top" class="btn btn-accent rounded-circle position-fixed bottom-0 end-0 m-4 shadow" style="width: 50px; height: 50px; z-index: 1000; display: none; align-items: center; justify-content: center;">
+        ↑
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

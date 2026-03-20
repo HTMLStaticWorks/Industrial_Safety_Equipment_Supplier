@@ -1,0 +1,13 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Deep Industrial Blue Shield (Protection) -->
+  <path d="M256 32L448 112V256C448 376 366.4 468.8 256 496C145.6 468.8 64 376 64 256V112L256 32Z" fill="#004A99"/>
+  
+  <!-- International Orange Gear (Industrial Power) -->
+  <path d="M256 160C202.9 160 160 202.9 160 256C160 309.1 202.9 352 256 352C309.1 352 352 309.1 352 256C352 202.9 309.1 160 256 160ZM256 320C220.7 320 192 291.3 192 256C192 220.7 220.7 192 256 192C291.3 192 320 220.7 320 256C320 291.3 291.3 320 256 320Z" fill="#FF6F00"/>
+  
+  <!-- Gear Teeth -->
+  <path d="M256 128V160M256 352V384M128 256H160M352 256H384M165.4 165.4L188 188M324 324L346.6 346.6M165.4 346.6L188 324M324 188L346.6 165.4" stroke="#FF6F00" stroke-width="24" stroke-linecap="round"/>
+  
+  <!-- Center Safety Star/Nut -->
+  <path d="M256 220L266 244H292L271 259L279 284L256 269L233 284L241 259L220 244H246L256 220Z" fill="white"/>
+</svg>

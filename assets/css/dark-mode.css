@@ -1,0 +1,410 @@
+/* 
+    Industrial Safety Equipment Supplier - Master Dark Mode System
+    Comprehensive overrides for a consistent, premium dark experience.
+*/
+
+body.dark-mode {
+    --bg-light: #0d1117; /* GitHub Dark Blue/Black */
+    --bg-alt: #161b22;
+    --text-main: #c9d1d9;
+    --text-muted: #8b949e;
+    --border-color: #30363d;
+    --secondary-color: #f0f6fc; /* Light color in dark mode */
+    --card-bg: #161b22;
+    --navbar-bg: rgba(13, 17, 23, 0.98);
+    --nav-active-color: #ff6f00; /* Preserve Safety Orange active state */
+
+    background-color: var(--bg-light) !important;
+    color: var(--text-main) !important;
+}
+
+/* Global Overrides for standard utility classes */
+.dark-mode .bg-white, 
+.dark-mode .bg-light,
+.dark-mode .card,
+.dark-mode .cert-card,
+.dark-mode .modal-content,
+.dark-mode .dropdown-menu,
+.dark-mode .bg-alt,
+.dark-mode .innovation-section,
+.dark-mode .training-section,
+.dark-mode .innovation-badge,
+.dark-mode .logistics-stats {
+    background-color: var(--card-bg) !important;
+    background-image: none !important;
+    color: var(--text-main) !important;
+}
+
+/* Button Visibility Fixes (Dark Mode) */
+.dark-mode .btn-primary {
+    color: var(--text-main) !important;
+}
+.dark-mode .btn-primary:hover {
+    color: var(--card-bg) !important; 
+}
+.dark-mode .btn-outline-primary {
+    border-color: var(--secondary-color) !important;
+    color: var(--secondary-color) !important;
+}
+.dark-mode .btn-outline-primary:hover {
+    background-color: var(--secondary-color) !important;
+    color: var(--card-bg) !important;
+}
+
+/* Hamburger Icon & Toggler (Dark Mode) */
+.dark-mode .navbar-toggler {
+    border: 1px solid var(--border-color) !important;
+    padding: 5px 12px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .navbar-toggler-icon {
+    filter: invert(1) grayscale(100%) brightness(200%) !important;
+}
+
+.dark-mode .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%) !important;
+    opacity: 0.8;
+}
+
+.dark-mode .btn-close:hover {
+    opacity: 1;
+}
+
+/* Fixed Navbar Dark Mode Background */
+.dark-mode .navbar {
+    background: var(--card-bg) !important;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.4) !important;
+}
+
+.dark-mode .text-dark,
+.dark-mode .text-black,
+.dark-mode h1, 
+.dark-mode h2, 
+.dark-mode h3, 
+.dark-mode h4, 
+.dark-mode h5, 
+.dark-mode h6 {
+    color: #ffffff !important;
+}
+
+.dark-mode .text-muted,
+.dark-mode .text-white-50 {
+    color: var(--text-muted) !important;
+}
+
+
+.dark-mode .border,
+.dark-mode .border-bottom,
+.dark-mode .border-top,
+.dark-mode .border-start,
+.dark-mode .border-end {
+    border-color: var(--border-color) !important;
+}
+
+.dark-mode .shadow,
+.dark-mode .shadow-sm,
+.dark-mode .shadow-lg {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+
+/* 
+   -------------------------------------------------------
+   MOBILE MENU THEME FIX 
+   Inherits Bootstrap full-screen layout, just fixes colors.
+   -------------------------------------------------------
+*/
+
+/* 
+   -------------------------------------------------------
+   MOBILE MENU THEME FIX (SCOPED TO MOBILE)
+   -------------------------------------------------------
+*/
+@media (max-width: 1199.98px) {
+    .dark-mode .offcanvas {
+        background-color: #0d1117 !important;
+        color: #ffffff !important;
+        border-left: 1px solid var(--border-color) !important;
+        height: 100vh !important;
+        top: 0 !important;
+    }
+
+    .dark-mode .offcanvas-header {
+        background-color: #161b22 !important;
+        border-bottom: 1px solid var(--border-color) !important;
+    }
+
+    .dark-mode .offcanvas-body {
+        background-color: #0d1117 !important;
+        color: #ffffff !important;
+    }
+
+    .dark-mode .offcanvas-body .nav-link {
+        color: #ffffff !important;
+        padding: 15px 20px !important;
+        font-weight: 500;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .dark-mode .offcanvas-body .nav-link.active,
+    .dark-mode .offcanvas-body .nav-link:hover {
+        color: var(--nav-active-color) !important;
+    }
+
+    .dark-mode .offcanvas-body .nav-link:after {
+        display: none !important;
+    }
+
+    .dark-mode .navbar-toggler {
+        border: 1px solid var(--border-color) !important;
+        padding: 5px 12px;
+        background: rgba(255, 255, 255, 0.05);
+    }
+    
+   
+    
+    .dark-mode .text-primary {
+        color: var(--nav-active-color) !important;
+    }
+}
+
+/* Specific Page Sections */
+.dark-mode .logistics-section {
+    background: linear-gradient(rgba(13, 17, 23, 0.95), rgba(13, 17, 23, 0.95)), url('../images/logistics-cargo.png') center/cover no-repeat !important;
+}
+
+.dark-mode .materials-section {
+    background: var(--bg-light) !important;
+}
+
+.dark-mode .logistics-stats,
+.dark-mode .architect-card {
+    background-color: #1c2128 !important; 
+    border-color: var(--border-color) !important;
+}
+
+/* Login/Register Card (Glassmorphism Overrides) */
+.dark-mode .login-card {
+    background: rgba(22, 27, 34, 0.8) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(15px);
+}
+
+/* Expert Consultation Background Overrides (Sidebar Cards) */
+.dark-mode .card[style*="background"] {
+    background: var(--bg-alt) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.dark-mode .badge-icon-box {
+    background: #0d1117 !important;
+    color: #fff !important;
+}
+
+/* Form Elements */
+.dark-mode .form-control,
+.dark-mode .form-select {
+    background-color: #0d1117 !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-main) !important;
+}
+
+.dark-mode .form-control::placeholder {
+    color: var(--text-muted);
+}
+
+.dark-mode .form-control:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 0.25rem rgba(0, 74, 153, 0.25) !important;
+}
+
+/* Table Overrides (Dashboard/Orders) */
+.dark-mode .table {
+    --bs-table-bg: transparent;
+    --bs-table-striped-bg: rgba(255, 255, 255, 0.02);
+    --bs-table-hover-bg: rgba(255, 255, 255, 0.05);
+    color: var(--text-main) !important;
+}
+
+.dark-mode .table thead th,
+.dark-mode .table thead tr {
+    background-color: var(--bg-alt) !important;
+    color: #fff !important;
+    border-color: var(--border-color) !important;
+}
+
+.dark-mode .table td {
+    border-color: var(--border-color) !important;
+}
+
+/* Dashboard Sidebar Specifics */
+.dark-mode .dashboard-sidebar {
+    background-color: #0d1117 !important;
+    border-right: 1px solid var(--border-color) !important;
+}
+
+.dark-mode .text-dark-mode-adapt, 
+.dark-mode .text-sidebar-adapt,
+.dark-mode .footer-sidebar p, 
+.dark-mode .footer-sidebar span,
+.dark-mode .footer-sidebar a {
+    color: #ffffff !important;
+}
+
+.dark-mode .nav-link:hover {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Buttons */
+.dark-mode .btn-outline-primary {
+    color: #58a6ff; 
+    border-color: #58a6ff;
+}
+
+.dark-mode .btn-outline-primary:hover {
+    background-color: #58a6ff;
+    color: #fff;
+}
+
+.dark-mode .btn-outline-secondary {
+    color: var(--text-muted);
+    border-color: var(--border-color);
+}
+
+.dark-mode .badge.bg-light.text-secondary {
+    background-color: var(--bg-alt) !important;
+    color: var(--text-main) !important;
+    border-color: var(--border-color) !important;
+}
+
+/* Footer & Global Alert */
+.dark-mode .footer {
+    background-color: #010409 !important;
+}
+
+.dark-mode .safety-alert {
+    background-color: #010409 !important;
+    border-bottom: 1px solid #30363d;
+}
+
+.dark-mode .category-card,
+.dark-mode .icon-box {
+    background: var(--bg-alt) !important;
+    border-color: var(--border-color) !important;
+}
+
+.dark-mode .materials-section::before {
+    background-image: 
+        linear-gradient(rgba(77, 163, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(77, 163, 255, 0.05) 1px, transparent 1px) !important;
+}
+
+/* Search Input inside groups */
+.dark-mode .input-group .form-control {
+    background: #0d1117 !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+/* Misc Utilities */
+.dark-mode .vr {
+    background-color: var(--border-color) !important;
+    opacity: 1;
+}
+
+.dark-mode .accordion-button {
+    background-color: var(--bg-alt) !important;
+    color: #fff !important;
+}
+
+
+.dark-mode .accordion-item {
+    border-color: var(--border-color) !important;
+}
+
+/* Lab Feature Cards - Dark Mode Fix */
+.dark-mode .lab-feature-card {
+    background: var(--bg-alt) !important;
+    border-color: var(--border-color) !important;
+}
+
+.dark-mode .lab-feature-card h6 {
+    color: #fff !important;
+}
+
+/* Glass Card (ISO/IEC badge) - Dark Mode Fix */
+.dark-mode .glass-card {
+    background: rgba(22, 27, 34, 0.88) !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.dark-mode .glass-card p {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+.dark-mode .main-content header.sticky-top {
+    background: rgba(13, 17, 23, 0.9) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px);
+}
+
+/* Dashboard Specific Visibility Fixes */
+.dark-mode .stat-card .text-muted {
+    color: #8b949e !important;
+}
+
+.dark-mode .stat-card h3 {
+    color: #ffffff !important;
+}
+
+.dark-mode .card h5, 
+.dark-mode .card h4,
+.dark-mode .card h6 {
+    color: #ffffff !important;
+}
+
+.dark-mode .text-body {
+    color: #c9d1d9 !important;
+}
+
+.dark-mode .bg-white.stat-card {
+    background-color: #1c2128 !important;
+}
+
+.dark-mode a.h5.text-dark {
+    color: #ffffff !important;
+}
+
+.dark-mode .list-group-item.bg-light {
+    background-color: rgba(255,255,255,0.03) !important;
+    border-color: rgba(255,255,255,0.1) !important;
+}
+
+/* Fix dashboard header logo visibility in dark mode */
+
+.dark-mode .filter-light {
+    filter: brightness(0) invert(1) !important;
+}
+
+.dark-mode .main-content header .text-muted {
+    color: #8b949e !important;
+}
+
+/* Blog Details specific overrides */
+.dark-mode .btn-light {
+    background-color: #1c2128 !important;
+    border-color: #30363d !important;
+    color: #c9d1d9 !important;
+}
+
+.dark-mode .btn-light:hover {
+    background-color: #30363d !important;
+}
+
+.dark-mode .share-btns .btn-light i {
+    color: #fff !important;
+}
+
+.dark-mode .blog-details-card {
+    background-color: var(--card-bg) !important;
+}

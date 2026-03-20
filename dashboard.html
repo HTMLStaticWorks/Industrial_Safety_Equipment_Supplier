@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Industrial Safety Equipment Supplier</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="icon" type="image/png" href="assets/images/logo.svg">
+</head>
+<body class="bg-light pt-0">
+
+    <div class="d-flex">
+        <!-- Dashboard Sidebar -->
+        <style>
+            .dashboard-sidebar .nav-link.active {
+                background-color: var(--primary-color) !important;
+                color: #fff !important;
+            }
+            .dark-mode .dashboard-sidebar .nav-link.active {
+                color: #fff !important;
+            }
+            .dashboard-sidebar .nav-link:after {
+                display: none !important;
+            }
+        </style>
+        <aside class="dashboard-sidebar p-4 h-100 d-flex flex-column position-fixed" style="z-index: 1100; transition: var(--transition-base);">
+            <!-- Brand Identity -->
+            <div class="mb-5 d-flex justify-content-between align-items-center">
+                <a class="brand-identity compact" href="index.html">
+                    <img src="assets/images/logo.svg" alt="Logo" class="brand-icon">
+                    <strong class="brand-text">INDUSTRIAL<span class="brand-text-accent">SAFETY</span></strong>
+                </a>
+                <button class="btn text-sidebar-adapt d-xl-none p-0" id="sidebar-close" title="Close Menu">
+                    <i class="fas fa-times fs-4"></i>
+                </button>
+            </div>
+            
+            <nav class="nav flex-column gap-2 mb-5" role="tablist">
+                <a href="#nav-analytics" class="nav-link rounded px-3 py-2 active text-dark-mode-adapt" id="nav-analytics-tab" data-bs-toggle="tab" role="tab">📊 Analytics Overview</a>
+                <a href="#nav-products" class="nav-link rounded px-3 py-2 text-dark-mode-adapt" id="nav-products-tab" data-bs-toggle="tab" role="tab">📦 Product Manager</a>
+                <a href="#nav-messages" class="nav-link rounded px-3 py-2 text-dark-mode-adapt" id="nav-messages-tab" data-bs-toggle="tab" role="tab">💬 Messages <span class="badge bg-danger ms-2">4</span></a>
+                <a href="#" class="nav-link rounded px-3 py-2 text-dark-mode-adapt">📄 SDS Repository</a>
+                <a href="#" class="nav-link rounded px-3 py-2 text-dark-mode-adapt">📉 Reports & Insights</a>
+            </nav>
+
+            <div class="mt-auto border-top border-light pt-4 footer-sidebar">
+                <div class="d-flex align-items-center gap-3">
+                    <img src="https://placehold.co/40x40/f8f9fa/333333?text=AV" class="rounded-circle shadow-sm">
+                    <div>
+                        <p class="small fw-bold mb-0">Admin User</p>
+                        <a href="login.html" class="small text-muted text-decoration-none">Sign Out</a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content flex-grow-1 px-4 px-md-5 pt-4 pb-5">
+            <header class="d-flex justify-content-between align-items-center mb-4 sticky-top backdrop-blur py-3" style="background: rgba(255,255,255,0.9); margin-top: -1.5rem; margin-inline: -1.5rem; padding-inline: 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.05); z-index: 1000;">
+                <div class="d-flex align-items-center">
+                    <!-- Hamburger / Sidebar Toggle (Mobile Only) -->
+                    <button class="btn btn-outline-primary btn-sm d-xl-none" id="sidebar-toggle" title="Toggle Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+
+                <!-- Centered Dashboard Title (Web & Mobile) -->
+                <div class="position-absolute start-50 translate-middle-x">
+                    <h2 class="mb-0 fw-bold d-none d-xl-block" style="font-size: 1.3rem;">Dashboard</h2>
+                    <h6 class="mb-0 fw-bold text-uppercase d-xl-none" style="letter-spacing: 1px; font-size: 0.9rem;">Dashboard</h6>
+                </div>
+
+                <div class="d-flex gap-2 align-items-center">
+                    <div class="d-flex align-items-center me-3 d-none d-xl-flex">
+                        <span class="text-muted small me-2">Welcome back, Admin.</span>
+                        <img src="https://placehold.co/32x32/f8f9fa/333333?text=AV" class="rounded-circle shadow-sm" style="width: 32px; height: 32px;">
+                    </div>
+                    <button class="btn btn-sm btn-outline-primary" id="theme-toggle" title="Toggle Dark Mode">🌓</button>
+                </div>
+            </header>
+
+            <!-- Tab Content Area -->
+            <div class="tab-content" id="dashboard-tabContent">
+                <!-- Analytics Tab -->
+                <div class="tab-pane fade show active" id="nav-analytics" role="tabpanel">
+            
+            <!-- Key Stats Grid -->
+            <style>
+            .stat-card {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                animation: slideUpFade 0.6s ease forwards;
+                opacity: 0;
+            }
+            .stat-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+            }
+            .delay-1 { animation-delay: 0.1s; }
+            .delay-2 { animation-delay: 0.2s; }
+            .delay-3 { animation-delay: 0.3s; }
+            .delay-4 { animation-delay: 0.4s; }
+            @keyframes slideUpFade {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            </style>
+            <div class="row g-4 mb-5">
+                <div class="col-md-3">
+                    <div class="card p-3 border-0 shadow-sm bg-white h-100 text-center d-flex flex-column justify-content-center stat-card delay-1">
+                        <small class="text-muted text-uppercase fw-bold">Total Sales (MTD)</small>
+                        <h3 class="fw-bold text-primary mt-2 mb-0">$24,560.80</h3>
+                        <p class="small text-success mt-2 mb-0">↑ 14% from last month</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card p-3 border-0 shadow-sm bg-white h-100 text-center d-flex flex-column justify-content-center stat-card delay-2">
+                        <small class="text-muted text-uppercase fw-bold">Active Orders</small>
+                        <h3 class="fw-bold text-muted mt-2 mb-0 opacity-25">---</h3>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card p-3 border-0 shadow-sm bg-white h-100 text-center d-flex flex-column justify-content-center stat-card delay-3">
+                        <small class="text-muted text-uppercase fw-bold">SDS Downloads</small>
+                        <h3 class="fw-bold text-primary mt-2 mb-0">1,024</h3>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card p-3 border-0 shadow-sm bg-white h-100 text-center d-flex flex-column justify-content-center stat-card delay-4">
+                        <small class="text-muted text-uppercase fw-bold">New Customers</small>
+                        <h3 class="fw-bold text-primary mt-2 mb-0">42</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <!-- Sales Chart Section -->
+                <div class="col-lg-8">
+                    <div class="card p-4 border-0 shadow-sm bg-white h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="mb-0 text-body">Monthly Revenue Overview</h5>
+                            <span class="badge bg-success bg-opacity-10 text-success px-3 py-2 border border-success border-opacity-25"><i class="fas fa-chart-line me-1"></i> +14.5%</span>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-md-4">
+                                <p class="text-muted small mb-1">Total Revenue</p>
+                                <h4 class="fw-bold mb-0 text-primary">$124,560.80</h4>
+                            </div>
+                            <div class="col-md-4">
+                                <p class="text-muted small mb-1">Average Order Value</p>
+                                <h4 class="fw-bold mb-0 text-body">$842.00</h4>
+                            </div>
+                            <div class="col-md-4">
+                                <p class="text-muted small mb-1">Active Customers</p>
+                                <h4 class="fw-bold mb-0 text-body">1,248</h4>
+                            </div>
+                        </div>
+                        <div class="bg-light p-4 rounded text-center position-relative" style="min-height: 220px;">
+                           <!-- Chart Bars / Line representation -->
+                           <div class="d-flex align-items-end justify-content-between h-100 pt-3" style="min-height: 150px;">
+                                <div class="bg-primary bg-opacity-50 rounded-top" style="width: 8%; height: 30%; transition: height 0.5s;"></div>
+                                <div class="bg-primary bg-opacity-50 rounded-top" style="width: 8%; height: 50%; transition: height 0.5s;"></div>
+                                <div class="bg-primary bg-opacity-75 rounded-top" style="width: 8%; height: 40%; transition: height 0.5s;"></div>
+                                <div class="bg-primary bg-opacity-75 rounded-top" style="width: 8%; height: 70%; transition: height 0.5s;"></div>
+                                <div class="bg-primary bg-opacity-50 rounded-top" style="width: 8%; height: 60%; transition: height 0.5s;"></div>
+                                <div class="bg-primary bg-opacity-75 rounded-top" style="width: 8%; height: 85%; transition: height 0.5s;"></div>
+                                <div class="bg-primary rounded-top" style="width: 8%; height: 100%; transition: height 0.5s; box-shadow: 0 0 10px rgba(0,74,153,0.3);"></div>
+                           </div>
+                           <div class="d-flex justify-content-between mt-2 pt-2 border-top small text-muted">
+                               <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recent Activities -->
+                <div class="col-lg-4">
+                    <div class="card p-4 border-0 shadow-sm bg-white h-100">
+                        <h5 class="mb-4 text-body">Recent Activities</h5>
+                        <ul class="list-unstyled mb-0 flex-grow-1">
+                            <li class="mb-4 small d-flex gap-3">
+                                <div class="p-2 border rounded bg-light text-primary d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;"><i class="fas fa-shopping-cart"></i></div>
+                                <div>
+                                    <p class="fw-bold mb-0 text-body">New Order #IND-98745</p>
+                                    <span class="text-muted">2 mins ago - $663.64</span>
+                                </div>
+                            </li>
+                            <li class="mb-4 small d-flex gap-3">
+                                <div class="p-2 border rounded bg-light text-success d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;"><i class="fas fa-check-circle"></i></div>
+                                <div>
+                                    <p class="fw-bold mb-0 text-body">Payment Received</p>
+                                    <span class="text-muted">45 mins ago - INV-4029</span>
+                                </div>
+                            </li>
+                            <li class="mb-4 small d-flex gap-3">
+                                <div class="p-2 border rounded bg-light text-warning d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;"><i class="fas fa-exclamation-triangle"></i></div>
+                                <div>
+                                    <p class="fw-bold mb-0 text-body">Low Stock Alert</p>
+                                    <span class="text-muted">3 hours ago - Safety Goggles</span>
+                                </div>
+                            </li>
+                            <li class="mb-4 small d-flex gap-3">
+                                <div class="p-2 border rounded bg-light text-info d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;"><i class="fas fa-user-plus"></i></div>
+                                <div>
+                                    <p class="fw-bold mb-0 text-body">New B2B Account</p>
+                                    <span class="text-muted">5 hours ago - Apex Construction</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline-secondary btn-sm w-100 mt-3">View All Activity</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Management Section -->
+            <div class="card border-0 shadow-sm bg-white p-4 mb-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="mb-0 text-body">Order Management</h5>
+                    <button class="btn btn-sm btn-outline-primary">Manage Orders</button>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="bg-light">
+                            <tr>
+                                <th class="border-0 rounded-start">Order ID</th>
+                                <th class="border-0">Client Name</th>
+                                <th class="border-0">Date</th>
+                                <th class="border-0">Amount</th>
+                                <th class="border-0">Status</th>
+                                <th class="border-0 rounded-end">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="fw-bold text-primary">#ORD-00124</span></td>
+                                <td class="text-body fw-medium">Apex Construction Ltd.</td>
+                                <td class="text-muted small">Mar 20, 2026</td>
+                                <td class="text-body fw-bold">$4,520.00</td>
+                                <td><span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-2 py-1">Delivered</span></td>
+                                <td><button class="btn btn-sm btn-light border">Details</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="fw-bold text-primary">#ORD-00125</span></td>
+                                <td class="text-body fw-medium">Metro Builders Inc.</td>
+                                <td class="text-muted small">Mar 19, 2026</td>
+                                <td class="text-body fw-bold">$1,250.50</td>
+                                <td><span class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 px-2 py-1">Processing</span></td>
+                                <td><button class="btn btn-sm btn-light border">Details</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="fw-bold text-primary">#ORD-00126</span></td>
+                                <td class="text-body fw-medium">Global Industries</td>
+                                <td class="text-muted small">Mar 18, 2026</td>
+                                <td class="text-body fw-bold">$8,900.00</td>
+                                <td><span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 px-2 py-1">Shipped</span></td>
+                                <td><button class="btn btn-sm btn-light border">Details</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            </div> <!-- End Analytics Tab -->
+
+            <!-- Product Manager Tab -->
+            <div class="tab-pane fade" id="nav-products" role="tabpanel">
+                <div class="card border-0 shadow-sm bg-white p-4 mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4 class="mb-0 text-body">Product Inventory Manager</h4>
+                        <button class="btn btn-primary btn-sm"><i class="fas fa-plus me-1"></i> Add Product</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead class="bg-light">
+                                <tr>
+                                    <th class="border-0 rounded-start">Product</th>
+                                    <th class="border-0">Name</th>
+                                    <th class="border-0">Category</th>
+                                    <th class="border-0">Stock</th>
+                                    <th class="border-0 rounded-end">Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><div class="bg-light rounded d-flex align-items-center justify-content-center fs-4" style="width:50px; height:50px;">🦺</div></td>
+                                    <td class="fw-bold text-body">High-Vis Safety Vest - Class 2</td>
+                                    <td class="text-muted">Apparel</td>
+                                    <td><span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-2 py-1">450 in stock</span></td>
+                                    <td class="fw-bold text-primary">$12.99</td>
+                                </tr>
+                                <tr>
+                                    <td><div class="bg-light rounded d-flex align-items-center justify-content-center fs-4" style="width:50px; height:50px;">🥽</div></td>
+                                    <td class="fw-bold text-body">Anti-Fog Safety Goggles</td>
+                                    <td class="text-muted">Eye Protection</td>
+                                    <td><span class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 px-2 py-1">12 in stock (Low)</span></td>
+                                    <td class="fw-bold text-primary">$8.50</td>
+                                </tr>
+                                <tr>
+                                    <td><div class="bg-light rounded d-flex align-items-center justify-content-center fs-4" style="width:50px; height:50px;">🥾</div></td>
+                                    <td class="fw-bold text-body">Steel Toe Work Boots</td>
+                                    <td class="text-muted">Footwear</td>
+                                    <td><span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-2 py-1">85 in stock</span></td>
+                                    <td class="fw-bold text-primary">$89.99</td>
+                                </tr>
+                                <tr>
+                                    <td><div class="bg-light rounded d-flex align-items-center justify-content-center fs-4" style="width:50px; height:50px;">🧤</div></td>
+                                    <td class="fw-bold text-body">Cut Resistant Gloves</td>
+                                    <td class="text-muted">Hand Protection</td>
+                                    <td><span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1">2 in stock (Critical)</span></td>
+                                    <td class="fw-bold text-primary">$24.50</td>
+                                </tr>
+                                <tr>
+                                    <td><div class="bg-light rounded d-flex align-items-center justify-content-center fs-4" style="width:50px; height:50px;">🎧</div></td>
+                                    <td class="fw-bold text-body">Industrial Earmuffs</td>
+                                    <td class="text-muted">Hearing Protection</td>
+                                    <td><span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-2 py-1">210 in stock</span></td>
+                                    <td class="fw-bold text-primary">$34.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Messages Tab -->
+            <div class="tab-pane fade" id="nav-messages" role="tabpanel">
+                <div class="card border-0 shadow-sm bg-white p-4 mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                       <h4 class="mb-0 text-body">Direct Messages</h4>
+                       <button class="btn btn-outline-primary btn-sm"><i class="fas fa-pen"></i> Compose</button>
+                    </div>
+                    <div class="list-group list-group-flush mb-0 gap-2">
+                        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 border rounded bg-light border-primary border-opacity-25">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; flex-shrink: 0;"><i class="fas fa-user-tie"></i></div>
+                            <div class="w-100">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1 fw-bold text-body">Apex Construction <span class="badge bg-danger ms-1">New</span></h6>
+                                    <small class="text-muted fw-bold">10 mins ago</small>
+                                </div>
+                                <p class="mb-1 small text-dark">Inquiry regarding bulk order for 500 hard hats and vests for our new site.</p>
+                            </div>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 border rounded bg-light border-primary border-opacity-25">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; flex-shrink: 0;"><i class="fas fa-industry"></i></div>
+                            <div class="w-100">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1 fw-bold text-body">Metro Builders Inc. <span class="badge bg-danger ms-1">New</span></h6>
+                                    <small class="text-muted fw-bold">1 hour ago</small>
+                                </div>
+                                <p class="mb-1 small text-dark">Can you provide an updated SDS for the industrial solvent (SKU: SOL-400)?</p>
+                            </div>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 border rounded border-light">
+                            <div class="bg-secondary bg-opacity-10 text-secondary rounded-circle d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; flex-shrink: 0;"><i class="fas fa-cogs"></i></div>
+                            <div class="w-100">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1 fw-bold text-body">Global Industries</h6>
+                                    <small class="text-muted">3 hours ago</small>
+                                </div>
+                                <p class="mb-1 small text-muted">Payment for Invoice #INV-4029 has been processed via wire transfer.</p>
+                            </div>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 border rounded border-light">
+                            <div class="bg-secondary bg-opacity-10 text-secondary rounded-circle d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; flex-shrink: 0;"><i class="fas fa-truck"></i></div>
+                            <div class="w-100">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1 fw-bold text-body">Optima Logistics</h6>
+                                    <small class="text-muted">5 hours ago</small>
+                                </div>
+                                <p class="mb-1 small text-muted">Notice: Delayed shipment for Order #IND-98740 due to weather conditions.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+
+
+            </div> <!-- End Tab Content -->
+
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

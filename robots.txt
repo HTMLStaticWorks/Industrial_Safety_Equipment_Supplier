@@ -1,0 +1,10 @@
+# Robots.txt for Industrial Safety Equipment Supplier
+User-agent: *
+Allow: /
+
+# Disallow admin areas
+Disallow: /dashboard.html
+Disallow: /profile.html
+Disallow: /orders.html
+
+Sitemap: https://www.industrialsafety.com/sitemap.xml

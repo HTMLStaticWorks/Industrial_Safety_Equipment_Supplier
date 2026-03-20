@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety Blog | Industrial Safety Equipment Supplier</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="icon" type="image/png" href="assets/images/logo.svg">
+</head>
+<body>
+    <!-- Main Navigation -->
+    <nav class="navbar navbar-expand-xl fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/logo.svg" alt="Industrial Safety Logo" width="45" height="45" class="me-2">
+                <strong style="color: var(--primary-color); font-size: 24px; letter-spacing: -1px;">INDUSTRIAL<span style="color: var(--accent-color);">SAFETY</span></strong>
+            </a>
+            
+            <div class="d-flex align-items-center order-xl-last gap-3">
+                <!-- Theme Toggles -->
+                <button class="btn btn-sm btn-outline-primary d-none d-xl-inline-block" id="theme-toggle" title="Toggle Dark Mode">🌓</button>
+                <a href="dashboard.html" class="btn btn-sm btn-outline-primary d-none d-xl-inline-block">Dashboard</a>
+                
+                <a href="cart.html" class="position-relative text-dark">
+                    🛒 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 10px;">3</span>
+                </a>
+                
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <a href="login.html" class="btn btn-primary d-none d-xl-inline-block">Client Login</a>
+            </div>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header border-bottom">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 gap-2">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item d-xl-none"><a class="nav-link fw-bold text-primary" href="login.html">Client Login</a></li>
+                    </ul>
+                    <div class="d-xl-none mt-4 d-flex gap-2">
+                         <button class="btn btn-outline-primary w-50" onclick="document.body.classList.toggle('dark-mode')">Dark Mode</button>
+                         <a href="dashboard.html" class="btn btn-outline-primary w-50">Dashboard</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-64">
+        <h1 class="display-3 fw-bold mb-3 text-center reveal-text">Safety Insights & News</h1>
+        <p class="text-center text-muted mb-5 lead reveal-text">Expert analysis on industrial trends, compliance, and workplace protection.</p>
+        
+        <!-- Blog Top Categories -->
+        <div class="row g-4 mb-64 mt-4 reveal-text">
+            <div class="col-md-3">
+                <div class="card h-100 hover-zoom category-blog-card p-4 text-center border-0 shadow-sm" style="background: linear-gradient(135deg, rgba(0, 74, 153, 0.05), #fff);">
+                    <div class="display-5 mb-3">👷</div>
+                    <h5 class="fw-bold">PPE Trends</h5>
+                    <p class="small text-muted">The latest in gear technology</p>
+                    <a href="#" class="stretched-link"></a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 hover-zoom category-blog-card p-4 text-center border-0 shadow-sm" style="background: linear-gradient(135deg, rgba(255, 111, 0, 0.05), #fff);">
+                    <div class="display-5 mb-3">📋</div>
+                    <h5 class="fw-bold">OSHA Updates</h5>
+                    <p class="small text-muted">Stay compliant with laws</p>
+                    <a href="#" class="stretched-link"></a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 hover-zoom category-blog-card p-4 text-center border-0 shadow-sm" style="background: linear-gradient(135deg, rgba(40, 167, 69, 0.05), #fff);">
+                    <div class="display-5 mb-3">🩹</div>
+                    <h5 class="fw-bold">First Aid</h5>
+                    <p class="small text-muted">Critical emergency response</p>
+                    <a href="#" class="stretched-link"></a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 hover-zoom category-blog-card p-4 text-center border-0 shadow-sm" style="background: linear-gradient(135deg, rgba(108, 117, 125, 0.05), #fff);">
+                    <div class="display-5 mb-3">🏢</div>
+                    <h5 class="fw-bold">Management</h5>
+                    <p class="small text-muted">Safety culture & leadership</p>
+                    <a href="#" class="stretched-link"></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Blog Top Search (Mobile & Tablet Only) -->
+        <div class="d-lg-none mb-5 reveal-text">
+            <div class="card p-4 border-0 shadow-sm bg-white rounded-4">
+                <h5 class="fw-bold mb-3 border-start border-primary border-4 ps-3 small">Search & Browse</h5>
+                <div class="input-group mb-3 shadow-sm rounded-3 overflow-hidden">
+                    <input type="text" class="form-control border-0 bg-light small" placeholder="Search topics...">
+                    <button class="btn btn-primary border-0 px-3 text-white">🔍 Search</button>
+                </div>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-light text-secondary border x-small px-3 py-2">OSHA</span>
+                    <span class="badge bg-light text-secondary border x-small px-3 py-2">PPE Trends</span>
+                    <span class="badge bg-light text-secondary border x-small px-3 py-2">Fall Safety</span>
+                    <span class="badge bg-light text-secondary border x-small px-3 py-2">Compliance</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <!-- Blog Main Feed -->
+            <div class="col-lg-9">
+                <article class="card border-0 shadow-sm overflow-hidden mb-0 h-100 reveal-text">
+                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1200&auto=format&fit=crop" class="blog-img-large" alt="Industrial Safety Specialist" style="height: 400px; width: 100%; object-fit: cover;">
+                    <div class="card-body p-lg-5 p-4">
+                        <span class="badge mb-3" style="background-color: var(--primary-color) !important;">Compliance News</span>
+                        <h2 class="mb-4 display-6 fw-bold">Understanding the 2026 OSHA Eye Protection Updates</h2>
+                        <p class="text-muted lead mb-4">Starting next month, new regulations will come into effect regarding high-impact splash protection in chemical refineries. Here is what safety managers need to know...</p>
+                        <a href="blog-details.html" class="btn btn-primary px-4 py-2">Read Full Article</a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-3 d-flex flex-column h-100">
+                <!-- 1. Search & Browse Hub (Desktop Only) -->
+                <div class="card p-4 border-0 shadow-sm bg-white mb-4 reveal-text d-none d-lg-block">
+                    <h5 class="fw-bold mb-3 border-start border-primary border-4 ps-3 small">Search & Browse</h5>
+                    <div class="input-group mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <input type="text" class="form-control border-0 bg-light small" placeholder="Search topics...">
+                        <button class="btn btn-primary border-0 px-3">🔍</button>
+                    </div>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-light text-secondary border x-small px-3 py-2">OSHA</span>
+                        <span class="badge bg-light text-secondary border x-small px-3 py-2">Fall Safety</span>
+                    </div>
+                </div>
+
+                <!-- 2. Featured Resource Hub (Visual Card) -->
+                <div class="card p-3 border-0 shadow-sm bg-white mb-4 reveal-text" style="animation-delay: 0.1s;">
+                    <div class="position-relative mb-3">
+                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&auto=format&fit=crop" class="img-fluid rounded-4 shadow-sm" alt="Safety Manager Engineering Layout" style="height: 120px; width: 100%; object-fit: cover;">
+                        <div class="position-absolute bottom-0 start-0 m-2 px-2 py-1 bg-accent text-white rounded-pill x-small fw-bold">FREE PDF</div>
+                    </div>
+                    <h5 class="fw-bold mb-2 small">2026 Audit Guide</h5>
+                    <p class="text-muted x-small mb-3">50+ critical checkpoints for safety managers.</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm w-100 fw-bold">Download</a>
+                </div>
+
+                <!-- 3. Expert Consultation & Newsletter (Integrated) -->
+                <div class="card p-4 border-0 shadow-sm text-center reveal-text mt-auto mb-0" style="animation-delay: 0.2s; background: linear-gradient(135deg, rgba(0, 74, 153, 0.03) 0%, #fff 100%); border: 1px solid rgba(0, 74, 153, 0.1) !important;">
+                    <div class="mb-3 text-dark">
+                        <div class="badge-icon-box mx-auto mb-2 shadow-sm" style="width: 50px; height: 50px; background: #fff; color: var(--primary-color); font-size: 1.5rem; border-radius: 12px;">🛡️</div>
+                        <h5 class="fw-bold mb-1 small text-primary">Expert Safety Audit</h5>
+                        <p class="text-muted x-small mb-3">Risk assessments for your site.</p>
+                        <h6 class="text-uppercase x-small fw-bold text-primary mb-2">Safety Digest</h6>
+                        <div class="input-group mb-2 shadow-sm rounded-3">
+                            <input type="email" class="form-control bg-light border-0 x-small" placeholder="Email Address">
+                        </div>
+                        <button class="btn btn-primary w-100 shadow btn-sm x-small">Subscribe</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Safety Resource Hub -->
+    <section class="py-64 text-white position-relative overflow-hidden" style="background-color: var(--primary-color) !important;">
+        <div class="enterprise-orb" style="opacity: 0.1;"></div>
+        <div class="container reveal-text">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0 text-start">
+                    <h2 class="display-5 fw-bold mb-3">Safety Resource Hub</h2>
+                    <p class="lead opacity-75 mb-4">Download comprehensive 2026 checklists, compliance guides, and safety posters for your facility.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#" class="btn btn-accent btn-lg px-4 shadow-lg">Download Guides</a>
+                        <a href="contact.html" class="btn btn-outline-light btn-lg px-4">Request Consultation</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="bg-white text-dark p-4 rounded-4 shadow h-100">
+                                <h4 class="fw-bold mb-2">OSHA 2026</h4>
+                                <p class="small text-muted mb-0">The complete summary of new regulations.</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="bg-white text-dark p-4 rounded-4 shadow h-100">
+                                <h4 class="fw-bold mb-2">PPE Audit</h4>
+                                <p class="small text-muted mb-0">Weekly inspection checklist for field teams.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expert Insights Section -->
+    <section class="py-64 bg-light">
+        <div class="container">
+            <div class="text-center mb-5 reveal-text">
+                <h6 class="text-primary fw-bold text-uppercase">The Minds Behind The Safety</h6>
+                <h2 class="display-6 fw-bold">Meet Our Safety Architects</h2>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4 reveal-text">
+                    <div class="card border-0 shadow-sm p-4 text-center h-100 hover-zoom architect-card">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop" class="rounded-circle mx-auto mb-4 shadow border border-2" width="120" height="120" style="object-fit: cover; transition: all 0.4s ease;" alt="Dr. Sarah Jenkins">
+                        <h5 class="fw-bold mb-1">Dr. Sarah Jenkins</h5>
+                        <p class="text-accent small fw-bold mb-3">Industrial Hygienist</p>
+                        <p class="small text-muted">Specializing in chemical respiratory protection and air quality monitoring for 15+ years.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal-text" style="animation-delay: 0.2s;">
+                    <div class="card border-0 shadow-sm p-4 text-center h-100 hover-zoom architect-card">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop" class="rounded-circle mx-auto mb-4 shadow border border-2" width="120" height="120" style="object-fit: cover; transition: all 0.4s ease;" alt="Robert Vance">
+                        <h5 class="fw-bold mb-1">Robert Vance</h5>
+                        <p class="text-accent small fw-bold mb-3">Fall Safety Specialist</p>
+                        <p class="small text-muted">Architect of zero-harm protocols for high-rise industrial construction projects.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal-text" style="animation-delay: 0.4s;">
+                    <div class="card border-0 shadow-sm p-4 text-center h-100 hover-zoom architect-card">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop" class="rounded-circle mx-auto mb-4 shadow border border-2" width="120" height="120" style="object-fit: cover; transition: all 0.4s ease;" alt="Elena Rodriguez">
+                        <h5 class="fw-bold mb-1">Elena Rodriguez</h5>
+                        <p class="text-accent small fw-bold mb-3">OSHA Policy Advisor</p>
+                        <p class="small text-muted">Former regulatory inspector helping our clients navigate complex compliance landscapes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Unique Section 1: Safety Culture Transformation -->
+    <section class="py-150 bg-white overflow-hidden position-relative section-blog-unique-1">
+        <div class="innovation-blob" style="opacity: 0.05; left: 0; top: 0;"></div>
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 reveal-right">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?w=800&auto=format&fit=crop" class="img-fluid rounded-5 shadow-2fb float-img" alt="Safety Team Collaboration">
+                        <div class="position-absolute bottom-0 end-0 p-4 rounded-4 shadow-lg translate-middle-y me-4 d-none d-md-block reveal-text" style="animation-delay: 0.5s; background-color: var(--primary-color) !important;">
+                            <h2 class="text-white fw-bold mb-0">120+</h2>
+                            <p class="text-white-50 x-small mb-0">Corporate Partners</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 reveal-text">
+                    <h6 class="text-accent fw-bold text-uppercase mb-3">Culture Matters</h6>
+                    <h2 class="display-5 fw-bold mb-4">Transforming Workplace Safety Culture</h2>
+                    <p class="text-muted mb-4 lead">Safety isn't just about the gear; it's about the mindset. Our experts help you implement behavioral-based safety protocols that protect your most valuable assets: your people.</p>
+                    <ul class="list-unstyled mb-5">
+                        <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-primary me-3"></i> Leadership Engagement Strategies</li>
+                        <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-primary me-3"></i> Peer-to-Peer Safety Audits</li>
+                        <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-primary me-3"></i> Psychological Safety in High-Risk Zones</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary btn-lg rounded-pill px-5 shadow">Learn Our Methodology</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Unique Section 2: Field Intelligence Hub (Light Theme) -->
+    <section class="py-150 position-relative overflow-hidden section-blog-unique-2">
+        <div class="lab-pattern" style="opacity: 0.1;"></div>
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5 order-lg-last reveal-text">
+                    <h2 class="display-5 fw-bold mb-4">Field Intelligence: The Data-Driven Edge</h2>
+                    <p class="text-muted lead mb-5">Access the latest whitepapers and analytics reports from our 2026 Field Safety Study. Learn how IoT and predictive analytics are reducing incident rates by 40%.</p>
+                    
+                    <div class="blog-feature-card p-4 rounded-4 border shadow-sm mb-4 hover-zoom">
+                        <div class="d-flex align-items-center">
+                            <div class="bg-primary rounded-circle p-3 me-4 text-white shadow"><i class="fas fa-microchip"></i></div>
+                            <div>
+                                <h5 class="fw-bold mb-1">Smart PPE Integration</h5>
+                                <p class="x-small mb-0 text-muted">Real-time vitals monitoring research.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-feature-card p-4 rounded-4 border shadow-sm hover-zoom">
+                        <div class="d-flex align-items-center">
+                            <div class="bg-accent rounded-circle p-3 me-4 text-white shadow"><i class="fas fa-chart-line"></i></div>
+                            <div>
+                                <h5 class="fw-bold mb-1">Predictive Risk Modeling</h5>
+                                <p class="x-small mb-0 text-muted">AI-driven accident prevention systems.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 reveal-right">
+                    <div class="position-relative lab-img-container">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1000&auto=format&fit=crop" class="img-fluid rounded-4 shadow-lg lab-main-img" alt="Digital Safety Engineering">
+                        <div class="lab-scanner-bar"></div>
+                        <div class="lab-indicator labs-p1" data-label="IoT Sensor Array"></div>
+                        <div class="lab-indicator labs-p3" data-label="HUD Interface v4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4">
+                    <a href="index.html" class="brand-identity mb-4">
+                        <img src="assets/images/logo.svg" alt="Logo" class="brand-icon">
+                        <strong class="brand-text">INDUSTRIAL<span class="brand-text-accent">SAFETY</span></strong>
+                    </a>
+                    <p>Leading supplier of B2B industrial safety equipment. We specialize in providing certified PPE for high-risk environments.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" title="X (Twitter)"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="shop.html">Shop All</a></li>
+                        <li><a href="blog.html">Safety Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="shop.html">Bulk Orders</a></li>
+                        <li><a href="dashboard.html">SDS Downloads</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li>📍 123 Industrial Way, Houston, TX</li>
+                        <li>📞 +1 (800) 555-0199</li>
+                        <li>✉️ sales@industrialsafety.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-top border-secondary py-4 text-center">
+                <p class="mb-0">&copy; 2026 Industrial Safety Equipment Supplier. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" id="back-to-top" class="btn btn-accent rounded-circle position-fixed bottom-0 end-0 m-4 shadow" style="width: 50px; height: 50px; z-index: 1000; display: none; align-items: center; justify-content: center;">
+        ↑
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

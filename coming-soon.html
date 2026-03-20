@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon | Industrial Safety Equipment Supplier</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        .coming-soon-wrapper { min-height: 100vh; width: 100vw; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem 1rem; overflow: hidden; transition: background-color 0.3s, color 0.3s; }
+        .countdown-item { padding: 30px; border: 1px solid var(--primary-color); border-radius: 12px; min-width: 120px; text-align: center; background: rgba(0,74,153, 0.05); }
+        .dark-mode .countdown-item { border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); }
+        .countdown-number { font-size: 3rem; font-weight: 700; line-height: 1; margin-bottom: 5px; color: var(--accent-color); }
+    </style>
+    <link rel="icon" type="image/png" href="assets/images/logo.svg">
+</head>
+<body class="bg-light m-0 p-0 overflow-hidden">
+    <button class="btn btn-sm btn-outline-primary position-fixed top-0 end-0 m-4 shadow" id="theme-toggle" title="Toggle Dark Mode" style="z-index: 1050; backdrop-filter: blur(5px);">
+        🌓 Theme
+    </button>
+    
+    <div class="coming-soon-wrapper">
+
+    <div class="text-center animate-me">
+        <a href="index.html" class="d-flex justify-content-center align-items-center mb-4 text-decoration-none">
+            <img src="assets/images/logo.svg" alt="Industrial Safety Logo" width="60" height="60" class="me-3">
+            <strong style="color: var(--primary-color); font-size: 32px; letter-spacing: -1px;">INDUSTRIAL<span style="color: var(--accent-color);">SAFETY</span></strong>
+        </a>
+        <h1 class="display-2 fw-bold mb-4 text-body">Construction In <span style="color: var(--accent-color);">Progress...</span></h1>
+        <p class="lead text-muted mb-5 mx-auto" style="max-width: 600px;">Our new safety procurement portal is being built to the highest industrial standards. Subscribe below to be the first in line for our launch.</p>
+        
+        <div class="d-flex justify-content-center gap-3 mb-5">
+            <div class="countdown-item">
+                <div class="countdown-number" id="days">24</div>
+                <div class="small text-muted text-uppercase">Days</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="hours">12</div>
+                <div class="small text-muted text-uppercase">Hours</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="mins">45</div>
+                <div class="small text-muted text-uppercase">Minutes</div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <div class="input-group" style="max-width: 500px;">
+                <input type="email" class="form-control form-control-lg bg-transparent text-body border-secondary" placeholder="Notify your company email...">
+                <button class="btn btn-accent btn-lg px-4 shadow-sm">Notify Me</button>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Simple Interval for Countdown visuals
+        setInterval(() => {
+            const m = document.getElementById('mins');
+            if (m) {
+                let val = parseInt(m.innerText);
+                if (val > 0) m.innerText = val - 1;
+                else m.innerText = 59;
+            }
+        }, 60000);
+    </script>
+</body>
+</html>
