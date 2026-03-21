@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop | Industrial Safety Equipment Supplier</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
-    <link rel="stylesheet" href="assets/css/rtl.css">
     <link rel="icon" type="image/png" href="assets/images/logo.svg">
 </head>
+
 <body class="bg-light shop-page">
     <!-- Main Navigation -->
     <nav class="navbar navbar-expand-xl fixed-top">
@@ -21,24 +24,27 @@
                 <img src="assets/images/logo.svg" alt="Industrial Safety Logo" class="brand-icon">
                 <strong class="brand-text">INDUSTRIAL<span class="brand-text-accent">SAFETY</span></strong>
             </a>
-            
-            <div class="d-flex align-items-center order-xl-last gap-3">
-                <!-- Theme Toggles -->
+
+            <div class="d-flex align-items-center order-xl-last gap-2 gap-sm-3">
+                <!-- Theme Toggle (Navbar: Desktop Only) -->
                 <button class="btn btn-sm btn-outline-primary d-none d-xl-inline-block" id="theme-toggle" title="Toggle Dark Mode">🌓</button>
                 <a href="dashboard.html" class="btn btn-sm btn-outline-primary d-none d-xl-inline-block">Dashboard</a>
-                
-                <a href="cart.html" class="position-relative text-dark">
-                    🛒 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 10px;">3</span>
+
+                <a href="cart.html" class="position-relative text-dark ms-1">
+                    🛒 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                        style="font-size: 10px;">3</span>
                 </a>
-                
-                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                
+
                 <a href="login.html" class="btn btn-primary d-none d-xl-inline-block">Client Login</a>
             </div>
 
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header border-bottom">
                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -51,11 +57,20 @@
                         <li class="nav-item"><a class="nav-link active" href="shop.html">Shop</a></li>
                         <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                        <li class="nav-item d-xl-none"><a class="nav-link fw-bold text-primary" href="login.html">Client Login</a></li>
                     </ul>
-                    <div class="d-xl-none mt-4 d-flex gap-2">
-                         <button class="btn btn-outline-primary w-50" onclick="document.body.classList.toggle('dark-mode')">Dark Mode</button>
-                         <a href="dashboard.html" class="btn btn-outline-primary w-50">Dashboard</a>
+                    <div class="d-xl-none mt-auto p-4 border-top">
+                        <div class="row g-2 mb-3">
+                            <div class="col-6">
+                                <button class="btn btn-outline-primary w-100 py-2 px-0 small theme-toggle theme-label"
+                                    style="font-size: 0.75rem; font-weight: 700;">DARK MODE</button>
+                            </div>
+                            <div class="col-6">
+                                <a href="dashboard.html" class="btn btn-outline-primary w-100 py-2 px-0 small"
+                                    style="font-size: 0.75rem; font-weight: 700;">DASHBOARD</a>
+                            </div>
+                        </div>
+                        <a href="login.html" class="btn btn-primary w-100 py-2 fw-bold text-white text-uppercase"
+                            style="letter-spacing: 1px;">Client Login</a>
                     </div>
                 </div>
             </div>
@@ -63,7 +78,8 @@
     </nav>
 
     <!-- Page Header (Replacing original simple h2) -->
-    <div class="py-5 text-white position-relative overflow-hidden shop-header" style="background-color: var(--primary-color) !important;">
+    <div class="py-5 text-white position-relative overflow-hidden shop-header"
+        style="background-color: var(--primary-color) !important;">
         <div class="bg-cert-text" style="top: 50%; opacity: 0.05;">PRODUCTS</div>
         <div class="container position-relative z-1 text-center">
             <h1 class="display-4 fw-bold mb-2">Shop All Equipment</h1>
@@ -76,16 +92,32 @@
         </div>
     </div>
 
-    <div class="container-fluid py-4 px-lg-5 shop-app-container">
+    <div class="container-fluid py-4 py-lg-0 px-lg-5 shop-app-container mt-lg-5 pt-lg-4">
         <div class="row g-4 h-100">
-            <!-- Sidebar Filters -->
-            <aside class="col-lg-3 shop-sidebar">
+            <!-- 1. Page Count & Sort (Order 1 on mobile, part of right side on desktop) -->
+            <div class="col-12 d-lg-none order-1">
+                <div
+                    class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-0 gap-3 bg-white p-3 rounded-4 shadow-sm animate-me">
+                    <p class="mb-0 text-muted">Showing all <strong>15</strong> premium products</p>
+                    <div class="d-flex align-items-center gap-3">
+                        <span class="small text-muted text-nowrap">Sort by:</span>
+                        <select class="form-select form-select-sm border-0 bg-light w-auto">
+                            <option>Popularity</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Sidebar Filters (Order 2 on mobile, On the left (Order 1) on desktop) -->
+            <aside class="col-lg-3 shop-sidebar order-2 order-lg-1">
                 <div class="card p-4 border-0 shadow-sm rounded-4">
                     <div class="d-flex align-items-center mb-4">
                         <span class="h5 mb-0">Filters</span>
                         <button class="btn btn-sm btn-link ms-auto text-decoration-none p-0">Clear All</button>
                     </div>
-                    
+
                     <div class="mb-4">
                         <label class="form-label fw-bold small text-uppercase">Categories</label>
                         <div class="filter-options">
@@ -141,9 +173,10 @@
                 </div>
             </aside>
 
-            <!-- Main Content -->
-            <main class="col-lg-9 shop-products-area">
-                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3 bg-white p-3 rounded-4 shadow-sm animate-me">
+            <!-- 3. Main Content Grid (Order 3 on mobile, Below count on desktop) -->
+            <main class="col-lg-9 shop-products-area order-3 order-lg-2 ms-lg-auto">
+                <!-- Desktop Only: Page Count & Sort (Ensures no gap between count and products on desktop) -->
+                <div class="d-none d-lg-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3 bg-white p-3 rounded-4 shadow-sm animate-me">
                     <p class="mb-0 text-muted">Showing all <strong>15</strong> premium products</p>
                     <div class="d-flex align-items-center gap-3">
                         <span class="small text-muted text-nowrap">Sort by:</span>
@@ -160,7 +193,8 @@
                     <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.1s;">
                         <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
                             <div class="card-img-wrapper bg-light p-4 text-center">
-                                <img src="assets/images/products/hard_hat_apex.png" class="img-fluid product-img-main" alt="Hard Hat" style="max-height: 180px;">
+                                <img src="assets/images/products/hard_hat_apex.png" class="img-fluid product-img-main"
+                                    alt="Hard Hat" style="max-height: 180px;">
                             </div>
                             <div class="card-body p-4 flex-direction-column">
                                 <div class="mt-auto">
@@ -180,7 +214,8 @@
                     <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.2s;">
                         <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
                             <div class="card-img-wrapper bg-light p-4 text-center">
-                                <img src="assets/images/products/kevlar_gloves.png" class="img-fluid product-img-main" alt="Gloves" style="max-height: 180px;">
+                                <img src="assets/images/products/kevlar_gloves.png" class="img-fluid product-img-main"
+                                    alt="Gloves" style="max-height: 180px;">
                             </div>
                             <div class="card-body p-4 flex-direction-column">
                                 <div class="mt-auto">
@@ -200,7 +235,8 @@
                     <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.3s;">
                         <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
                             <div class="card-img-wrapper bg-light p-4 text-center">
-                                <img src="assets/images/products/fall_arrest_harness.png" class="img-fluid product-img-main" alt="Harness" style="max-height: 180px;">
+                                <img src="assets/images/products/fall_arrest_harness.png"
+                                    class="img-fluid product-img-main" alt="Harness" style="max-height: 180px;">
                             </div>
                             <div class="card-body p-4 flex-direction-column">
                                 <div class="mt-auto">
@@ -220,7 +256,8 @@
                     <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.1s;">
                         <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
                             <div class="card-img-wrapper bg-light p-4 text-center">
-                                <img src="assets/images/products/reflective_vest_c3.png" class="img-fluid product-img-main" alt="Vest" style="max-height: 180px;">
+                                <img src="assets/images/products/reflective_vest_c3.png"
+                                    class="img-fluid product-img-main" alt="Vest" style="max-height: 180px;">
                             </div>
                             <div class="card-body p-4 flex-direction-column">
                                 <div class="mt-auto">
@@ -241,7 +278,8 @@
                         <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
                             <div class="badge bg-primary position-absolute top-0 end-0 m-3">New Tech</div>
                             <div class="card-img-wrapper bg-light p-4 text-center">
-                                <img src="assets/images/products/hud_smart_helmet.png" class="img-fluid product-img-main" alt="Smart Helmet" style="max-height: 180px;">
+                                <img src="assets/images/products/hud_smart_helmet.png"
+                                    class="img-fluid product-img-main" alt="Smart Helmet" style="max-height: 180px;">
                             </div>
                             <div class="card-body p-4 flex-direction-column">
                                 <div class="mt-auto">
@@ -261,7 +299,8 @@
                     <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.3s;">
                         <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
                             <div class="card-img-wrapper bg-light p-4 text-center">
-                                <img src="assets/images/products/vr_training_set.png" class="img-fluid product-img-main" alt="VR Safety" style="max-height: 180px;">
+                                <img src="assets/images/products/vr_training_set.png" class="img-fluid product-img-main"
+                                    alt="VR Safety" style="max-height: 180px;">
                             </div>
                             <div class="card-body p-4 flex-direction-column">
                                 <div class="mt-auto">
@@ -282,7 +321,8 @@
                         <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
                             <div class="badge bg-success position-absolute top-0 start-0 m-3 z-1">Eco-Friendly</div>
                             <div class="card-img-wrapper bg-light p-4 text-center">
-                                <img src="assets/images/products/eco_nitrile_gloves.png" class="img-fluid product-img-main" alt="Eco Gear" style="max-height: 180px;">
+                                <img src="assets/images/products/eco_nitrile_gloves.png"
+                                    class="img-fluid product-img-main" alt="Eco Gear" style="max-height: 180px;">
                             </div>
                             <div class="card-body p-4 flex-direction-column">
                                 <div class="mt-auto">
@@ -302,7 +342,8 @@
                     <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.2s;">
                         <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
                             <div class="card-img-wrapper bg-light p-4 text-center">
-                                <img src="assets/images/products/aramid_sleeves.png" class="img-fluid product-img-main" alt="Sleeves" style="max-height: 180px;">
+                                <img src="assets/images/products/aramid_sleeves.png" class="img-fluid product-img-main"
+                                    alt="Sleeves" style="max-height: 180px;">
                             </div>
                             <div class="card-body p-4 flex-direction-column">
                                 <div class="mt-auto">
@@ -322,7 +363,8 @@
                     <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.3s;">
                         <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
                             <div class="card-img-wrapper bg-light p-4 text-center">
-                                <img src="assets/images/products/panoramic_goggles.png" class="img-fluid product-img-main" alt="Goggles" style="max-height: 180px;">
+                                <img src="assets/images/products/panoramic_goggles.png"
+                                    class="img-fluid product-img-main" alt="Goggles" style="max-height: 180px;">
                             </div>
                             <div class="card-body p-4 flex-direction-column">
                                 <div class="mt-auto">
@@ -342,7 +384,8 @@
                     <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.1s;">
                         <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
                             <div class="card-img-wrapper bg-light p-4 text-center">
-                                <img src="assets/images/products/safety_signage.png" alt="Signage" class="img-fluid product-img-main" style="max-height: 180px;">
+                                <img src="assets/images/products/safety_signage.png" alt="Signage"
+                                    class="img-fluid product-img-main" style="max-height: 180px;">
                             </div>
                             <div class="card-body p-4 flex-direction-column">
                                 <div class="mt-auto">
@@ -363,7 +406,8 @@
                         <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
                             <div class="badge bg-info position-absolute top-0 start-0 m-3 z-1">Bulk Buy</div>
                             <div class="card-img-wrapper bg-light p-4 text-center">
-                                <img src="assets/images/products/nitrile_gloves_bulk.png" alt="Gloves Bulk" class="img-fluid product-img-main" style="max-height: 180px;">
+                                <img src="assets/images/products/nitrile_gloves_bulk.png" alt="Gloves Bulk"
+                                    class="img-fluid product-img-main" style="max-height: 180px;">
                             </div>
                             <div class="card-body p-4 flex-direction-column">
                                 <div class="mt-auto">
@@ -383,7 +427,8 @@
                     <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.3s;">
                         <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
                             <div class="card-img-wrapper bg-light p-4 text-center">
-                                <img src="assets/images/products/mesh_vest.png" alt="Mesh Vest" class="img-fluid product-img-main" style="max-height: 180px;">
+                                <img src="assets/images/products/mesh_vest.png" alt="Mesh Vest"
+                                    class="img-fluid product-img-main" style="max-height: 180px;">
                             </div>
                             <div class="card-body p-4 flex-direction-column">
                                 <div class="mt-auto">
@@ -404,7 +449,8 @@
                         <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
                             <div class="badge bg-danger position-absolute top-0 start-0 m-3 z-1">Save 15%</div>
                             <div class="card-img-wrapper bg-light p-4 text-center">
-                                <img src="assets/images/products/pro_harness.png" alt="Pro Harness" class="img-fluid product-img-main" style="max-height: 180px;">
+                                <img src="assets/images/products/pro_harness.png" alt="Pro Harness"
+                                    class="img-fluid product-img-main" style="max-height: 180px;">
                             </div>
                             <div class="card-body p-4 flex-direction-column">
                                 <div class="mt-auto">
@@ -424,7 +470,8 @@
                     <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.2s;">
                         <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
                             <div class="card-img-wrapper bg-light p-4 text-center">
-                                <img src="assets/images/products/safety_starter_kit.png" alt="Safety Kit" class="img-fluid product-img-main" style="max-height: 180px;">
+                                <img src="assets/images/products/safety_starter_kit.png" alt="Safety Kit"
+                                    class="img-fluid product-img-main" style="max-height: 180px;">
                             </div>
                             <div class="card-body p-4 flex-direction-column">
                                 <div class="mt-auto">
@@ -444,7 +491,8 @@
                     <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.3s;">
                         <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
                             <div class="card-img-wrapper bg-light p-4 text-center">
-                                <img src="assets/images/products/face_shield.png" alt="Face Shield" class="img-fluid product-img-main" style="max-height: 180px;">
+                                <img src="assets/images/products/face_shield.png" alt="Face Shield"
+                                    class="img-fluid product-img-main" style="max-height: 180px;">
                             </div>
                             <div class="card-body p-4 flex-direction-column">
                                 <div class="mt-auto">
@@ -464,11 +512,16 @@
                 <!-- Pagination (Improved Styling) -->
                 <nav class="mt-5 pt-4 border-top">
                     <ul class="pagination justify-content-center gap-2">
-                        <li class="page-item"><a class="page-link rounded-circle border-0 bg-white shadow-sm" href="#">«</a></li>
-                        <li class="page-item active"><a class="page-link rounded-circle border-0 shadow-sm" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link rounded-circle border-0 bg-white shadow-sm" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link rounded-circle border-0 bg-white shadow-sm" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link rounded-circle border-0 bg-white shadow-sm" href="#">»</a></li>
+                        <li class="page-item"><a class="page-link rounded-circle border-0 bg-white shadow-sm"
+                                href="#">«</a></li>
+                        <li class="page-item active"><a class="page-link rounded-circle border-0 shadow-sm"
+                                href="#">1</a></li>
+                        <li class="page-item"><a class="page-link rounded-circle border-0 bg-white shadow-sm"
+                                href="#">2</a></li>
+                        <li class="page-item"><a class="page-link rounded-circle border-0 bg-white shadow-sm"
+                                href="#">3</a></li>
+                        <li class="page-item"><a class="page-link rounded-circle border-0 bg-white shadow-sm"
+                                href="#">»</a></li>
                     </ul>
                 </nav>
             </main>
@@ -484,7 +537,8 @@
                         <img src="assets/images/logo.svg" alt="Logo" class="brand-icon">
                         <strong class="brand-text">INDUSTRIAL<span class="brand-text-accent">SAFETY</span></strong>
                     </a>
-                    <p>Leading supplier of B2B industrial safety equipment. We specialize in providing certified PPE for high-risk environments.</p>
+                    <p>Leading supplier of B2B industrial safety equipment. We specialize in providing certified PPE for
+                        high-risk environments.</p>
                     <div class="d-flex gap-3 mt-4">
                         <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-icon" title="X (Twitter)"><i class="fab fa-twitter"></i></a>
@@ -525,11 +579,13 @@
     </footer>
 
     <!-- Back to Top -->
-    <a href="#" id="back-to-top" class="btn btn-accent rounded-circle position-fixed bottom-0 end-0 m-4 shadow" style="width: 50px; height: 50px; z-index: 1000; display: none; align-items: center; justify-content: center;">
+    <a href="#" id="back-to-top" class="btn btn-accent rounded-circle position-fixed bottom-0 end-0 m-4 shadow"
+        style="width: 50px; height: 50px; z-index: 1000; display: none; align-items: center; justify-content: center;">
         ↑
     </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>

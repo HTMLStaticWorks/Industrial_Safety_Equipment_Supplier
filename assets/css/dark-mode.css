@@ -18,6 +18,11 @@ body.dark-mode {
     color: var(--text-main) !important;
 }
 
+/* Specific purely black background for Login/Register (which use bg-white on body) */
+body.dark-mode.bg-white {
+    background-color: #000000 !important;
+}
+
 /* Global Overrides for standard utility classes */
 .dark-mode .bg-white, 
 .dark-mode .bg-light,
@@ -43,15 +48,19 @@ body.dark-mode {
     color: var(--card-bg) !important; 
 }
 .dark-mode .btn-outline-primary {
-    border-color: var(--secondary-color) !important;
-    color: var(--secondary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
 }
 .dark-mode .btn-outline-primary:hover {
-    background-color: var(--secondary-color) !important;
-    color: var(--card-bg) !important;
+    background-color: var(--primary-color) !important;
+    color: #ffffff !important;
 }
 
 /* Hamburger Icon & Toggler (Dark Mode) */
+.dark-mode .theme-toggle.theme-label {
+    color: #ffffff !important;
+}
+
 .dark-mode .navbar-toggler {
     border: 1px solid var(--border-color) !important;
     padding: 5px 12px;

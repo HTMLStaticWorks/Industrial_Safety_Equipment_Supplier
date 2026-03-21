@@ -4,6 +4,58 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // -------------------------------------------------------------------------
+    // Home 1 Hero Title Letter Animation
+    // -------------------------------------------------------------------------
+    const heroTitle = document.querySelector('.hero-title-type');
+    const heroStats = document.querySelector('.hero-stats-animated');
+
+    if (heroTitle) {
+        let charIndex = 0;
+
+        const wrapLetters = (node) => {
+            if (node.nodeType === Node.TEXT_NODE) {
+                const fragment = document.createDocumentFragment();
+
+                Array.from(node.textContent).forEach(char => {
+                    if (char.trim() === '') {
+                        fragment.appendChild(document.createTextNode(char));
+                        return;
+                    }
+
+                    const letter = document.createElement('span');
+                    letter.className = 'hero-letter';
+                    letter.style.setProperty('--char-index', charIndex);
+                    letter.textContent = char;
+                    fragment.appendChild(letter);
+                    charIndex += 1;
+                });
+
+                node.parentNode.replaceChild(fragment, node);
+                return;
+            }
+
+            Array.from(node.childNodes).forEach(wrapLetters);
+        };
+
+        wrapLetters(heroTitle);
+    }
+
+    if (heroStats) {
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        heroStats.classList.add('stats-animated-in');
+                    }, 450);
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.35 });
+
+        statsObserver.observe(heroStats);
+    }
+
+    // -------------------------------------------------------------------------
     // Page Loader
     // -------------------------------------------------------------------------
     const loader = document.getElementById('loader-wrapper');
@@ -19,16 +71,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // -------------------------------------------------------------------------
     // Dark Mode Toggle (Unified System)
     // -------------------------------------------------------------------------
-    const themeToggles = document.querySelectorAll('#theme-toggle, #theme-toggle-sidebar');
+    const themeToggles = document.querySelectorAll('.theme-toggle, #theme-toggle');
     
     if (themeToggles.length > 0) {
         const setDarkMode = (isDark) => {
             if (isDark) {
                 document.body.classList.add('dark-mode');
-                themeToggles.forEach(t => t.classList.add('active'));
+                themeToggles.forEach(t => {
+                    t.classList.add('active');
+                    if (t.classList.contains('theme-label')) {
+                        t.textContent = 'LIGHT MODE';
+                    }
+                });
             } else {
                 document.body.classList.remove('dark-mode');
-                themeToggles.forEach(t => t.classList.remove('active'));
+                themeToggles.forEach(t => {
+                    t.classList.remove('active');
+                    if (t.classList.contains('theme-label')) {
+                        t.textContent = 'DARK MODE';
+                    }
+                });
             }
             localStorage.setItem('theme-dark', isDark);
         };
