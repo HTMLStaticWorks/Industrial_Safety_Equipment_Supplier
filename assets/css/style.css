@@ -2141,6 +2141,13 @@ footer a:hover {
     }
 }
 
+.enterprise-image-container {
+    display: table;
+    margin: 0 auto;
+    position: relative;
+    max-width: 100%;
+}
+
 .enterprise-main-img {
     border-radius: 20px;
     z-index: 1;
@@ -2800,8 +2807,39 @@ footer a:hover {
 }
 
 .pulse-img-wrapper {
+    display: inline-block;
     position: relative;
-    padding: 20px;
+    max-width: 100%;
+}
+
+.pulse-mini-card {
+    max-width: 250px;
+    width: auto;
+    z-index: 10;
+    transition: all 0.5s ease;
+}
+
+@media (max-width: 767px) {
+    .pulse-mini-card {
+        max-width: 180px !important;
+        margin: 10px !important;
+        padding: 12px !important;
+    }
+
+    .pulse-mini-card i {
+        font-size: 1.25rem !important;
+        margin-right: 10px !important;
+    }
+
+    .pulse-mini-card h6 {
+        font-size: 0.85rem !important;
+        margin-bottom: 2px !important;
+    }
+
+    .pulse-mini-card p {
+        font-size: 0.65rem !important;
+        line-height: 1.2 !important;
+    }
 }
 
 .pulse-outline {
@@ -2920,7 +2958,6 @@ footer a:hover {
     border-color: var(--primary-color) !important;
     color: var(--primary-color) !important;
     background: rgba(0, 74, 153, 0.1) !important;
-    /* Subtle blue tint in dark mode */
 }
 
 .dark-mode #theme-toggle:hover {
@@ -3021,4 +3058,38 @@ footer a:hover {
     background-color: var(--primary-color) !important;
     color: #ffffff !important;
     border-color: var(--primary-color) !important;
+}
+
+/* Newsletter Responsive Fix */
+@media (max-width: 767px) {
+    .newsletter-input::placeholder {
+        font-size: 0.9rem !important;
+    }
+    .newsletter-input {
+        font-size: 0.9rem !important;
+        padding-left: 20px !important;
+    }
+}
+
+.rounded-pill-custom {
+    border-radius: 50px;
+}
+
+@media (max-width: 575px) {
+    .rounded-pill-custom {
+        border-radius: 20px;
+    }
+}
+
+.newsletter-wrapper input:focus {
+    box-shadow: none !important;
+}
+
+.newsletter-wrapper button {
+    transition: all 0.3s ease;
+}
+
+.newsletter-wrapper button:hover {
+    background-color: var(--secondary-color) !important;
+    color: #fff;
 }
