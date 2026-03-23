@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Close sidebar when clicking outside on mobile
     document.addEventListener('click', (e) => {
-        if (window.innerWidth < 992) {
+        if (window.innerWidth < 1200) {
             if (sidebar?.classList.contains('active') && !sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
                 sidebar.classList.remove('active');
             }
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // -------------------------------------------------------------------------
     // Mobile Sidebar Logic
     // -------------------------------------------------------------------------
-    if (window.innerWidth < 992) {
+    if (window.innerWidth < 1200) {
         sidebar?.classList.add('sidebar-hidden');
     }
 });
