@@ -2750,23 +2750,23 @@ footer a:hover {
     min-height: 100vh;
 }
 
-@media (max-width: 1199.98px) {
+@media (max-width: 1200px) {
     .dashboard-sidebar {
-        width: 340px !important;
-        left: -340px !important;
+        width: 320px !important;
+        left: -320px !important;
         position: fixed !important;
-        top: 0;
-        z-index: 2000;
+        top: 0 !important;
+        z-index: 2500 !important;
     }
 
     .dashboard-sidebar.active {
         left: 0 !important;
-        box-shadow: 15px 0 40px rgba(0, 0, 0, 0.4);
+        box-shadow: 15px 0 40px rgba(0, 0, 0, 0.4) !important;
     }
 
     .main-content {
         margin-left: 0 !important;
-        overflow-x: hidden;
+        overflow-x: hidden !important;
     }
 
     /* Adjust font sizes for Dashboard Content */
