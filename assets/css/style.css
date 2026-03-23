@@ -2756,6 +2756,7 @@ footer a:hover {
         left: -340px !important;
         position: fixed !important;
         top: 0;
+        z-index: 2000;
     }
 
     .dashboard-sidebar.active {
@@ -2766,19 +2767,6 @@ footer a:hover {
     .main-content {
         margin-left: 0 !important;
         overflow-x: hidden;
-        /* Ensure only content area scrolls, not header */
-    }
-
-    /* Keep the things scrollable horizontally only below the header */
-    #dashboard-tabContent {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 20px;
-    }
-
-    #dashboard-tabContent>.tab-pane {
-        min-width: 320px;
-        /* Base mobile width */
     }
 
     /* Adjust font sizes for Dashboard Content */
@@ -3093,3 +3081,80 @@ footer a:hover {
     background-color: var(--secondary-color) !important;
     color: #fff;
 }
+
+/* Contact Page Corporate Card Fix */
+.contact-method {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .contact-method {
+        font-size: 0.95rem !important;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 991px) {
+    .contact-method {
+        justify-content: center;
+    }
+}
+
+
+/* Footer Alignment: Tablet (768px-1199px) Left | Mobile (0-767px) Center */
+.footer-contact-list {
+    padding-left: 0;
+}
+
+.footer-contact-list li {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+    color: #adb5bd;
+}
+
+.footer-contact-list li span:first-child {
+    flex-shrink: 0;
+    width: 24px;
+    display: inline-block;
+    text-align: center;
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .footer .col-md-4, 
+    .footer h5, 
+    .footer .list-unstyled,
+    .footer .footer-contact-list li {
+        text-align: left !important;
+        justify-content: flex-start !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer .col-md-4, 
+    .footer h5, 
+    .footer .list-unstyled {
+        text-align: center !important;
+    }
+    .footer .footer-contact-list {
+        display: inline-block !important;
+        text-align: left !important;
+    }
+}
+
+
+
+/* Fix Hero Title wrapping at 1024px */
+@media (min-width: 992px) and (max-width: 1080px) {
+    .hero-premium h1 {
+        font-size: 2.6rem !important;
+        line-height: 1.15;
+    }
+}
+

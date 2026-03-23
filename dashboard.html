@@ -44,8 +44,8 @@
                 <a href="#nav-analytics" class="nav-link rounded px-3 py-2 active text-dark-mode-adapt" id="nav-analytics-tab" data-bs-toggle="tab" role="tab">📊 Analytics Overview</a>
                 <a href="#nav-products" class="nav-link rounded px-3 py-2 text-dark-mode-adapt" id="nav-products-tab" data-bs-toggle="tab" role="tab">📦 Product Manager</a>
                 <a href="#nav-messages" class="nav-link rounded px-3 py-2 text-dark-mode-adapt" id="nav-messages-tab" data-bs-toggle="tab" role="tab">💬 Messages <span class="badge bg-danger ms-2">4</span></a>
-                <a href="#" class="nav-link rounded px-3 py-2 text-dark-mode-adapt">📄 SDS Repository</a>
-                <a href="#" class="nav-link rounded px-3 py-2 text-dark-mode-adapt">📉 Reports & Insights</a>
+                <a href="#nav-sds" class="nav-link rounded px-3 py-2 text-dark-mode-adapt" id="nav-sds-tab" data-bs-toggle="tab" role="tab">📄 SDS Repository</a>
+                <a href="#nav-reports" class="nav-link rounded px-3 py-2 text-dark-mode-adapt" id="nav-reports-tab" data-bs-toggle="tab" role="tab">📉 Reports & Insights</a>
             </nav>
 
             <div class="mt-auto border-top border-light pt-4 footer-sidebar">
@@ -376,9 +376,123 @@
                     </div>
                 </div>
             </div>
-            
 
+            <!-- SDS Repository Tab -->
+            <div class="tab-pane fade" id="nav-sds" role="tabpanel">
+                <div class="card border-0 shadow-sm bg-white p-4 mb-4">
+                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+                        <h4 class="mb-0 text-body">Safety Data Sheets (SDS)</h4>
+                        <div class="d-flex gap-2">
+                            <input type="text" class="form-control form-control-sm" placeholder="Search SDS..." style="min-width: 200px;">
+                            <button class="btn btn-primary btn-sm px-3">Filter</button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle border-light border-opacity-10">
+                            <thead class="bg-light-sidebar-adapt">
+                                <tr class="text-dark-mode-adapt">
+                                    <th class="border-0 rounded-start px-3">Document Name</th>
+                                    <th class="border-0">Universal SKU</th>
+                                    <th class="border-0">Revision Date</th>
+                                    <th class="border-0">Language</th>
+                                    <th class="border-0 rounded-end">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="fw-bold text-body px-3"><i class="far fa-file-pdf text-danger me-2"></i> Industrial Solvent - SOL-400</td>
+                                    <td class="text-dark-mode-adapt opacity-75">SOL-400-X</td>
+                                    <td class="text-dark-mode-adapt">Mar 15, 2026</td>
+                                    <td class="text-dark-mode-adapt">English / ES</td>
+                                    <td><button class="btn btn-sm btn-outline-primary"><i class="fas fa-download me-1"></i> PDF</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold text-body px-3"><i class="far fa-file-pdf text-danger me-2"></i> Cleaning Compound - CL-90</td>
+                                    <td class="text-dark-mode-adapt opacity-75">CL-90-IND</td>
+                                    <td class="text-dark-mode-adapt">Feb 28, 2026</td>
+                                    <td class="text-dark-mode-adapt">English</td>
+                                    <td><button class="btn btn-sm btn-outline-primary"><i class="fas fa-download me-1"></i> PDF</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold text-body px-3"><i class="far fa-file-pdf text-danger me-2"></i> Safety Goggle Anti-Fog Solution</td>
+                                    <td class="text-dark-mode-adapt opacity-75">AF-OPT-01</td>
+                                    <td class="text-dark-mode-adapt">Jan 12, 2026</td>
+                                    <td class="text-dark-mode-adapt">Multi-Lang</td>
+                                    <td><button class="btn btn-sm btn-outline-primary"><i class="fas fa-download me-1"></i> PDF</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Reports & Insights Tab -->
+            <div class="tab-pane fade" id="nav-reports" role="tabpanel">
+                <div class="row g-4 mb-4">
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm bg-white p-4 h-100">
+                            <h5 class="mb-3 text-body">Compliance Health Score</h5>
+                            <div class="d-flex flex-column flex-sm-row align-items-center gap-3 gap-sm-4 text-center text-sm-start">
+                                <div class="position-relative d-flex align-items-center justify-content-center" style="width: 100px; height: 100px;">
+                                    <svg viewBox="0 0 36 36" class="circular-chart" style="width: 100px; height: 100px; transform: rotate(-90deg); color: var(--primary-color);">
+                                        <path class="circle-bg" stroke="#eee" stroke-width="2.5" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path class="circle" stroke="currentColor" stroke-width="2.5" stroke-dasharray="92, 100" stroke-linecap="round" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    </svg>
+                                    <span class="position-absolute h3 fw-bold mb-0" style="color: var(--primary-color);">92%</span>
+                                </div>
+                                <div>
+                                    <p class="text-muted small mb-2">Excellent. Your multi-site safety documentation is currently ahead of OSHA audit requirements.</p>
+                                    <span class="badge bg-primary fw-bold text-white px-3 py-2 shadow-sm rounded-pill">All Sites Compliant</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm bg-white p-4 h-100">
+                            <h5 class="mb-3 text-body">Popular Categories Insight</h5>
+                            <div class="space-y-3">
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between small mb-1">
+                                        <span class="fw-bold">Head Protection</span>
+                                        <span>42%</span>
+                                    </div>
+                                    <div class="progress" style="height: 6px;">
+                                        <div class="progress-bar bg-primary" style="width: 42%;"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between small mb-1">
+                                        <span class="fw-bold">Hand Protection</span>
+                                        <span>28%</span>
+                                    </div>
+                                    <div class="progress" style="height: 6px;">
+                                        <div class="progress-bar bg-accent" style="width: 28%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-0 shadow-sm bg-white p-4">
+                    <h5 class="mb-4">Available Reports</h5>
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item d-flex flex-column flex-md-row justify-content-between align-items-md-center py-3 bg-transparent px-0 border-light gap-3">
+                            <div>
+                                <h6 class="mb-0 fw-bold text-body">Annual Site Safety Audit - Q1 2026</h6>
+                                <small class="text-muted">Generated on Mar 01, 2026</small>
+                            </div>
+                            <button class="btn btn-sm btn-outline-primary px-3 py-2 fw-bold text-uppercase rounded-pill" style="font-size: 0.75rem;">View Insight</button>
+                        </div>
+                        <div class="list-group-item d-flex flex-column flex-md-row justify-content-between align-items-md-center py-3 bg-transparent px-0 border-light gap-3">
+                            <div>
+                                <h6 class="mb-0 fw-bold text-body">Procurement Efficiency Analysis</h6>
+                                <small class="text-muted">Generated on Feb 15, 2026</small>
+                            </div>
+                            <button class="btn btn-sm btn-outline-primary px-3 py-2 fw-bold text-uppercase rounded-pill" style="font-size: 0.75rem;">View Insight</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             </div> <!-- End Tab Content -->
 
         </main>
