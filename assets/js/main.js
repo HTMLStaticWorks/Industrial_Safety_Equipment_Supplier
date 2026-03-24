@@ -110,13 +110,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // -------------------------------------------------------------------------
-    // RTL Toggle 
+    // RTL Toggle (Unified System)
     // -------------------------------------------------------------------------
-    const rtlToggle = document.getElementById('rtl-toggle');
-    if (rtlToggle) {
-        rtlToggle.addEventListener('click', () => {
-            document.body.classList.toggle('rtl');
-            document.documentElement.setAttribute('dir', document.body.classList.contains('rtl') ? 'rtl' : 'ltr');
+    const rtlToggles = document.querySelectorAll('.rtl-toggle, #rtl-toggle');
+    
+    if (rtlToggles.length > 0) {
+        const setRtlMode = (isRtl) => {
+            if (isRtl) {
+                document.documentElement.setAttribute('dir', 'rtl');
+                document.body.classList.add('rtl');
+                rtlToggles.forEach(t => {
+                    t.classList.add('active');
+                    t.textContent = 'LTR';
+                });
+            } else {
+                document.documentElement.setAttribute('dir', 'ltr');
+                document.body.classList.remove('rtl');
+                rtlToggles.forEach(t => {
+                    t.classList.remove('active');
+                    t.textContent = 'RTL';
+                });
+            }
+            localStorage.setItem('rtl-mode', isRtl);
+        };
+
+        // Init RTL from local storage
+        if (localStorage.getItem('rtl-mode') === 'true') {
+            setRtlMode(true);
+        }
+
+        rtlToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const willBeRtl = !(document.documentElement.getAttribute('dir') === 'rtl');
+                setRtlMode(willBeRtl);
+            });
         });
     }
 
