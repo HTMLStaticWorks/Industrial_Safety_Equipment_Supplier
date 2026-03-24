@@ -96,26 +96,92 @@
         </div>
     </div>
 
-    <div class="container-fluid py-4 py-lg-0 px-lg-5 shop-app-container mt-lg-5 pt-lg-4">
+    <div class="container-fluid py-4 py-xl-0 px-xl-5 shop-app-container mt-xl-5 pt-xl-4">
         <div class="row g-4 h-100">
-            <!-- 1. Page Count & Sort (Order 1 on mobile, part of right side on desktop) -->
-            <div class="col-12 d-lg-none order-2">
-                <div
-                    class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-0 gap-3 bg-white p-3 rounded-4 shadow-sm animate-me">
-                    <p class="mb-0 text-muted">Showing all <strong>15</strong> premium products</p>
-                    <div class="d-flex align-items-center gap-3">
-                        <span class="small text-muted text-nowrap">Sort by:</span>
-                        <select class="form-select form-select-sm border-0 bg-light w-auto">
-                            <option>Popularity</option>
-                            <option>Price: Low to High</option>
-                            <option>Price: High to Low</option>
-                        </select>
+            <!-- 1. Page Count, Sort & Filters (Order 1 on mobile, part of right side on desktop) -->
+            <div class="col-12 d-xl-none order-1">
+                <div class="bg-white p-3 rounded-4 shadow-sm mb-4 animate-me">
+                    <div class="d-flex align-items-center justify-content-between w-100">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="dropdown">
+                                <div class="d-flex align-items-center gap-2" type="button" data-bs-toggle="dropdown" 
+                                     data-bs-auto-close="outside" aria-expanded="false" style="cursor: pointer;" id="filterIconTrigger">
+                                    <i class="fas fa-filter text-primary fs-4" title="Toggle Filters"></i>
+                                </div>
+                                <div class="dropdown-menu p-4 shadow-lg border-0 rounded-4 mt-3 animate-me" style="width: 320px; z-index: 2000;">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <span class="small fw-bold text-muted text-uppercase">Filter Settings</span>
+                                        <button class="btn btn-sm btn-link ms-auto text-decoration-none p-0 text-accent small">Clear All</button>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label class="form-label fw-bold small text-uppercase mb-3">Categories</label>
+                                        <div class="filter-options">
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" type="checkbox" id="m-cat-1" checked>
+                                                <label class="form-check-label" for="m-cat-1">Head Protection</label>
+                                            </div>
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" type="checkbox" id="m-cat-2">
+                                                <label class="form-check-label" for="m-cat-2">Face & Eye</label>
+                                            </div>
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" type="checkbox" id="m-cat-3">
+                                                <label class="form-check-label" for="m-cat-3">Respiratory</label>
+                                            </div>
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" type="checkbox" id="m-cat-4">
+                                                <label class="form-check-label" for="m-cat-4">High-Vis Clothing</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4 pt-2 border-top">
+                                        <label class="form-label fw-bold small text-uppercase mb-3 mt-2">Price Range</label>
+                                        <input type="range" class="form-range custom-range" min="0" max="1000" id="m-priceRange">
+                                        <div class="d-flex justify-content-between mt-1">
+                                            <span class="small fw-bold text-primary">$0</span>
+                                            <span class="small fw-bold text-primary">$1,000+</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4 pt-2 border-top">
+                                        <label class="form-label fw-bold small text-uppercase mb-3 mt-2">Certifications</label>
+                                        <div class="filter-options">
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" type="checkbox" id="m-cert-1">
+                                                <label class="form-check-label" for="m-cert-1">ANSI Compliant</label>
+                                            </div>
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" type="checkbox" id="m-cert-2">
+                                                <label class="form-check-label" for="m-cert-2">OSHA Approved</label>
+                                            </div>
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" type="checkbox" id="m-cert-3">
+                                                <label class="form-check-label" for="m-cert-3">CE Certified</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <button class="btn btn-primary w-100 mt-3 py-2 rounded-3 small text-uppercase fw-bold" type="button" onclick="this.closest('.dropdown-menu').previousElementSibling.click()">Apply Filters</button>
+                                </div>
+                            </div>
+                            <p class="mb-0 text-muted small">Showing all <strong>15</strong> premium products</p>
+                        </div>
+                        <div class="d-flex align-items-center gap-2 ms-auto">
+                            <span class="small text-muted text-nowrap">Sort:</span>
+                            <select class="form-select form-select-sm border-0 bg-light w-auto fw-bold" style="border-radius: 10px;">
+                                <option>Popularity</option>
+                                <option>Price: Low to High</option>
+                                <option>Price: High to Low</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 2. Sidebar Filters (Order 2 on mobile, On the left (Order 1) on desktop) -->
-            <aside class="col-lg-3 shop-sidebar order-1 order-lg-1">
+            <!-- 2. Sidebar Filters (Desktop Only) -->
+            <aside class="col-xl-3 shop-sidebar d-none d-xl-block order-xl-1">
                 <div class="card p-4 border-0 shadow-sm rounded-4">
                     <div class="d-flex align-items-center mb-4">
                         <span class="h5 mb-0">Filters</span>
@@ -177,10 +243,10 @@
                 </div>
             </aside>
 
-            <!-- 3. Main Content Grid (Order 3 on mobile, Below count on desktop) -->
-            <main class="col-lg-9 shop-products-area order-3 order-lg-2 ms-lg-auto">
+            <!-- 3. Main Content Grid (Order 2 on mobile, Below count on desktop) -->
+            <main class="col-xl-9 shop-products-area order-2 order-xl-2 ms-xl-auto">
                 <!-- Desktop Only: Page Count & Sort (Ensures no gap between count and products on desktop) -->
-                <div class="d-none d-lg-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3 bg-white p-3 rounded-4 shadow-sm animate-me">
+                <div class="d-none d-xl-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3 bg-white p-3 rounded-4 shadow-sm animate-me">
                     <p class="mb-0 text-muted">Showing all <strong>15</strong> premium products</p>
                     <div class="d-flex align-items-center gap-3">
                         <span class="small text-muted text-nowrap">Sort by:</span>
@@ -280,7 +346,7 @@
                     <!-- 5: Smart Helmet -->
                     <div class="col-sm-6 col-md-4 reveal-text" style="transition-delay: 0.2s;">
                         <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-                            <div class="badge bg-primary position-absolute top-0 end-0 m-3">New Tech</div>
+                            <div class="badge bg-primary position-absolute top-0 end-0 m-3 z-1">New Tech</div>
                             <div class="card-img-wrapper bg-light p-4 text-center">
                                 <img src="assets/images/products/hud_smart_helmet.png"
                                     class="img-fluid product-img-main" alt="Smart Helmet" style="max-height: 180px;">
@@ -588,8 +654,25 @@
         ↑
     </a>
 
+    <div id="filter-backdrop" class="d-none" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.4); z-index: 1050; backdrop-filter: blur(2px);"></div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterTrigger = document.getElementById('filterIconTrigger');
+            const backdrop = document.getElementById('filter-backdrop');
+            
+            if (filterTrigger && backdrop) {
+                filterTrigger.addEventListener('show.bs.dropdown', function () {
+                    backdrop.classList.remove('d-none');
+                });
+                filterTrigger.addEventListener('hide.bs.dropdown', function () {
+                    backdrop.classList.add('d-none');
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

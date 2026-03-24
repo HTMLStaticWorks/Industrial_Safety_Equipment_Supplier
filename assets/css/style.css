@@ -2641,7 +2641,7 @@ footer a:hover {
 }
 
 /* --- High-Performance Shop Scroll Architecture (Desktop Only) --- */
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
     .shop-page {
         /* Restore standard flow to allow hero scrolling */
         height: auto !important;
